@@ -1,4 +1,7 @@
 import pg from "pg";
+import dns from "dns";
+
+dns.setDefaultResultOrder("ipv4first");
 
 const connectionString = process.env.SUPABASE_DATABASE_URL;
 
@@ -14,6 +17,9 @@ function getPool(): pg.Pool | null {
     pool = new pg.Pool({
       connectionString,
       ssl: { rejectUnauthorized: false },
+      max: 5,
+      idleTimeoutMillis: 30000,
+      connectionTimeoutMillis: 10000,
     });
   }
 
