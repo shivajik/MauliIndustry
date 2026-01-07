@@ -1,5 +1,5 @@
 import { Sun, Moon, Monitor } from "lucide-react";
-import { useColorScheme } from "@dazl/color-scheme/react";
+import { useState, useEffect } from "react";
 import { Button } from "~/components/ui/button/button";
 import {
   DropdownMenu,
@@ -10,15 +10,7 @@ import {
 import style from "./color-scheme-toggle.module.css";
 
 interface ColorSchemeToggleProps {
-  /**
-   * @important
-   * @default false
-   */
   triggerText?: boolean;
-  /**
-   * @important
-   * @default true
-   */
   optionText?: boolean;
 }
 
@@ -28,8 +20,36 @@ const ICON_LABEL = {
   system: { icon: <Monitor />, label: "System" },
 };
 
+function useColorSchemeClient() {
+  const [scheme, setScheme] = useState<{ configScheme: "light" | "dark" | "system"; resolvedScheme: "light" | "dark" }>({ configScheme: "system", resolvedScheme: "light" });
+  
+  useEffect(() => {
+    const api = typeof window !== "undefined" ? (window as any).colorSchemeApi : null;
+    if (api) {
+      const updateScheme = () => {
+        const { config, resolved } = api.currentState;
+        setScheme({
+          configScheme: config,
+          resolvedScheme: resolved,
+        });
+      };
+      updateScheme();
+      return api.subscribe(() => updateScheme());
+    }
+  }, []);
+  
+  const setColorScheme = (config: "light" | "dark" | "system") => {
+    const api = typeof window !== "undefined" ? (window as any).colorSchemeApi : null;
+    if (api) {
+      api.config = config;
+    }
+  };
+  
+  return { ...scheme, setColorScheme };
+}
+
 export function ColorSchemeToggle({ triggerText = false, optionText = true }: ColorSchemeToggleProps) {
-  const { configScheme, resolvedScheme, setColorScheme } = useColorScheme();
+  const { configScheme, resolvedScheme, setColorScheme } = useColorSchemeClient();
   const { icon, label } = ICON_LABEL[resolvedScheme];
 
   return (

@@ -1,5 +1,5 @@
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import type { Route } from "./+types/root";
 import { Toaster } from "./components/ui/toaster/toaster";
 import colorSchemeApi from "@dazl/color-scheme/client?url";
@@ -13,7 +13,6 @@ import "./styles/tokens/decorations.css";
 import "./styles/tokens/spacings.css";
 import "./styles/tokens/typography.css";
 import "./styles/theme.css";
-import { useColorScheme } from "@dazl/color-scheme/react";
 import favicon from "/favicon.svg";
 
 export const links: Route.LinksFunction = () => [
@@ -34,8 +33,29 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+function useColorSchemeClient() {
+  const [scheme, setScheme] = useState({ rootCssClass: "", resolvedScheme: "light" });
+  
+  useEffect(() => {
+    const api = typeof window !== "undefined" ? (window as any).colorSchemeApi : null;
+    if (api) {
+      const updateScheme = () => {
+        const { resolved } = api.currentState;
+        setScheme({
+          rootCssClass: api.getRootCssClass(resolved) || "",
+          resolvedScheme: resolved,
+        });
+      };
+      updateScheme();
+      return api.subscribe(() => updateScheme());
+    }
+  }, []);
+  
+  return scheme;
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
-  const { rootCssClass, resolvedScheme } = useColorScheme();
+  const { rootCssClass, resolvedScheme } = useColorSchemeClient();
   return (
     <html lang="en" suppressHydrationWarning className={rootCssClass} style={{ colorScheme: resolvedScheme }}>
       <head>
@@ -57,11 +77,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   useEffect(() => {
-    // Initialize theme on app load
     const activeThemeId = localStorage.getItem('cms-active-theme') || 'default';
     const customThemes = localStorage.getItem('cms-themes');
     
-    // Default themes
     const defaultThemes = [
       {
         id: 'default',
@@ -96,7 +114,6 @@ export default function App() {
     
     const root = document.documentElement;
     
-    // Apply colors
     Object.entries(theme.colors).forEach(([key, value]) => {
       for (let i = 1; i <= 12; i++) {
         root.style.setProperty(`--color-${key}-${i}`, `var(--${value}-${i})`);
@@ -104,7 +121,6 @@ export default function App() {
       root.style.setProperty(`--color-${key}-contrast`, `var(--${value}-contrast)`);
     });
     
-    // Apply fonts
     Object.entries(theme.fonts).forEach(([key, value]) => {
       root.style.setProperty(`--font-${key}`, value as string);
     });
