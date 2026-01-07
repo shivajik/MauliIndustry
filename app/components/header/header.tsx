@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router";
-import { Factory, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import classNames from "classnames";
 import { useAppContext } from "~/context/app-context";
@@ -8,7 +8,7 @@ import styles from "./header.module.css";
 export function Header() {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { company, getMenuByLocation } = useAppContext();
+  const { getMenuByLocation } = useAppContext();
   
   const mainMenu = getMenuByLocation("header");
   const navLinks = mainMenu?.items.filter(item => item.enabled).sort((a, b) => a.order - b.order) || [];
@@ -17,11 +17,7 @@ export function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link to="/" className={styles.logo}>
-          <Factory className={styles.logoIcon} />
-          <div className={styles.logoText}>
-            <span className={styles.logoName}>{company.name}</span>
-            <span className={styles.logoTagline}>{company.tagline}</span>
-          </div>
+          <img src="/logo.jpg" alt="Mauli Industries" className={styles.logoImage} />
         </Link>
 
         <nav className={styles.nav}>
