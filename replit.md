@@ -46,6 +46,19 @@ The project uses Supabase and requires:
 - `SUPABASE_DATABASE_URL` - Supabase transaction pooler connection string (port 6543)
 
 ## Deployment
-Configured for autoscale deployment with:
+
+### Vercel (Recommended)
+This project is configured for Vercel deployment with the `@vercel/react-router` preset:
+1. Push code to GitHub
+2. Import project in Vercel dashboard
+3. Select "React Router" as framework preset
+4. Add environment variable: `SUPABASE_DATABASE_URL`
+5. Deploy
+
+Build commands (auto-detected):
+- Build: `npm run build`
+- Output: Vercel serverless functions
+
+### Replit Autoscale
 - Build: `npm run build`
 - Start: `npm run start`
