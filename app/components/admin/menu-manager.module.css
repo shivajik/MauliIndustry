@@ -1,0 +1,248 @@
+.container {
+  width: 100%;
+}
+
+.header {
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font-size: var(--font-size-5);
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.subtitle {
+  font-size: var(--font-size-2);
+  color: var(--color-neutral-10);
+  margin: 0;
+}
+
+.tabsList {
+  margin-bottom: var(--space-5);
+}
+
+.menuBadge {
+  margin-left: var(--space-2);
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+}
+
+.menuActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.editCard {
+  padding: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+.editCardHeader {
+  margin-bottom: var(--space-5);
+}
+
+.cardHint {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-neutral-10);
+  margin: var(--space-2) 0 0 0;
+}
+
+.cardTitle {
+  font-size: var(--font-size-4);
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.menuItems {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.menuItemCard {
+  padding: var(--space-4);
+  border: 1px solid var(--color-neutral-6);
+  transition: all 0.2s ease;
+}
+
+.menuItemCard:hover {
+  border-color: var(--color-accent-7);
+  box-shadow: var(--shadow-2);
+}
+
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+  gap: var(--space-3);
+}
+
+.itemTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.dragHandle {
+  color: var(--color-neutral-9);
+  cursor: grab;
+  flex-shrink: 0;
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}
+
+.itemLabel {
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  font-size: var(--font-size-2);
+}
+
+.externalIcon {
+  color: var(--color-accent-9);
+}
+
+.itemBadges {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-neutral-2);
+  border-radius: var(--radius-2);
+}
+
+.itemUrl {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-1);
+}
+
+.urlLabel {
+  font-weight: 500;
+  color: var(--color-neutral-10);
+}
+
+.itemUrl code {
+  background: var(--color-neutral-3);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-1);
+  font-family: var(--font-code);
+  color: var(--color-accent-11);
+}
+
+.itemMeta {
+  display: flex;
+  gap: var(--space-4);
+  font-size: var(--font-size-0);
+  color: var(--color-neutral-10);
+}
+
+.itemActions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.emptyState {
+  padding: var(--space-8);
+  text-align: center;
+  border: 2px dashed var(--color-neutral-6);
+  border-radius: var(--radius-2);
+  color: var(--color-neutral-9);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.formGroup label {
+  font-size: var(--font-size-1);
+  font-weight: 500;
+  color: var(--color-neutral-11);
+}
+
+.checkboxLabel {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkboxLabel span {
+  font-weight: 400;
+  color: var(--color-neutral-11);
+}
+
+.select {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-2);
+  background: var(--color-neutral-1);
+  color: var(--color-neutral-12);
+  font-size: var(--font-size-1);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.select:focus {
+  border-color: var(--color-accent-7);
+  box-shadow: 0 0 0 3px var(--color-accent-3);
+}
+
+.formActions {
+  display: flex;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-neutral-6);
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .itemHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

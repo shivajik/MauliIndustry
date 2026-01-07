@@ -1,0 +1,252 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-6);
+}
+
+.header {
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin-bottom: var(--space-2);
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--color-neutral-11);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.themesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-5);
+}
+
+.themeCard {
+  background: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-4);
+  overflow: hidden;
+  transition: all 0.2s var(--ease-out);
+  position: relative;
+}
+
+.themeCard:hover {
+  border-color: var(--color-accent-7);
+  box-shadow: var(--shadow-3);
+  transform: translateY(-2px);
+}
+
+.themeCard.active {
+  border-color: var(--color-accent-9);
+  box-shadow: 0 0 0 2px var(--color-accent-4);
+}
+
+.activeBadge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  background: var(--color-accent-9);
+  color: var(--color-accent-contrast);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font-caption);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: var(--color-neutral-3);
+}
+
+.themeContent {
+  padding: var(--space-4);
+}
+
+.themeName {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin-bottom: var(--space-2);
+}
+
+.themeDescription {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-neutral-11);
+  margin-bottom: var(--space-3);
+  line-height: 1.5;
+}
+
+.themeMeta {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+  font-size: 0.75rem;
+  color: var(--color-neutral-10);
+  font-family: var(--font-caption);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.colorPalette {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.colorSwatch {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-2);
+  border: 1px solid var(--color-neutral-6);
+  position: relative;
+}
+
+.colorSwatch::after {
+  content: attr(data-color);
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.625rem;
+  color: var(--color-neutral-10);
+  white-space: nowrap;
+}
+
+.themeActions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.themeActions button {
+  flex: 1;
+}
+
+/* Theme Editor Dialog */
+.editorDialog {
+  max-width: 700px;
+}
+
+.editorForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.formLabel {
+  font-family: var(--font-subheading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-neutral-7);
+  border-radius: var(--radius-2);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  background: var(--color-neutral-1);
+  color: var(--color-neutral-12);
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: var(--color-accent-8);
+  box-shadow: 0 0 0 3px var(--color-accent-4);
+}
+
+.formTextarea {
+  min-height: 80px;
+  resize: vertical;
+  font-family: var(--font-code);
+}
+
+.colorGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.fontGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--space-8);
+  color: var(--color-neutral-10);
+}
+
+.emptyState svg {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-4);
+  opacity: 0.3;
+}
+
+/* Thumbnail upload */
+.thumbnailUpload {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.thumbnailPreview {
+  width: 100%;
+  height: 200px;
+  border-radius: var(--radius-3);
+  object-fit: cover;
+  border: 1px solid var(--color-neutral-6);
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadButton {
+  width: 100%;
+}

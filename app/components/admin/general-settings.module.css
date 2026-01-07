@@ -1,0 +1,128 @@
+.container {
+  max-width: 900px;
+}
+
+.card {
+  padding: var(--space-6);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-5);
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.cardDescription {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-neutral-11);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-top: var(--space-5);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sectionTitle {
+  font-family: var(--font-subheading);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin: 0;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.fieldHint {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-neutral-10);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.select {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-2);
+  background: var(--color-neutral-1);
+  color: var(--color-neutral-12);
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.select:focus {
+  border-color: var(--color-accent-7);
+  box-shadow: 0 0 0 3px var(--color-accent-3);
+}
+
+.formActions {
+  display: flex;
+  gap: var(--space-3);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-neutral-6);
+}
+
+.displayView {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-top: var(--space-5);
+}
+
+.displayGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.displayItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.displayItem p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-neutral-12);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .formRow,
+  .displayGrid {
+    grid-template-columns: 1fr;
+  }
+}
