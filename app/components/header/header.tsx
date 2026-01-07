@@ -2,15 +2,13 @@ import { Link, useLocation } from "react-router";
 import { Factory, Menu, X } from "lucide-react";
 import { useState } from "react";
 import classNames from "classnames";
-import { useCompanyData } from "~/hooks/use-cms-data";
-import { useMenuManager } from "~/hooks/use-menu-manager";
+import { useAppContext } from "~/context/app-context";
 import styles from "./header.module.css";
 
 export function Header() {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const company = useCompanyData();
-  const { getMenuByLocation } = useMenuManager();
+  const { company, getMenuByLocation } = useAppContext();
   
   const mainMenu = getMenuByLocation("header");
   const navLinks = mainMenu?.items.filter(item => item.enabled).sort((a, b) => a.order - b.order) || [];

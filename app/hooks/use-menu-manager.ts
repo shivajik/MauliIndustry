@@ -45,9 +45,10 @@ const DEFAULT_MENUS: Menu[] = [
 ];
 
 export function useMenuManager() {
-  const [menus, setMenus] = useState<Menu[]>([]);
+  const [menus, setMenus] = useState<Menu[]>(DEFAULT_MENUS);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     const stored = localStorage.getItem("menus");
     if (stored) {
       try {
@@ -55,8 +56,6 @@ export function useMenuManager() {
       } catch {
         setMenus(DEFAULT_MENUS);
       }
-    } else {
-      setMenus(DEFAULT_MENUS);
     }
   }, []);
 

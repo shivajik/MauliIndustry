@@ -11,6 +11,7 @@ function sanitizeConnectionString(url: string | undefined): string | undefined {
 const connectionString = sanitizeConnectionString(process.env.SUPABASE_DATABASE_URL);
 
 let pool: pg.Pool | null = null;
+let dbInitialized = false;
 
 function getPool(): pg.Pool | null {
   if (!connectionString) {
@@ -29,6 +30,118 @@ function getPool(): pg.Pool | null {
   }
 
   return pool;
+}
+
+async function ensureInitialized(): Promise<void> {
+  if (dbInitialized) return;
+  const db = getPool();
+  if (!db) return;
+  
+  try {
+    await db.query(`
+      CREATE TABLE IF NOT EXISTS products (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT,
+        image_url TEXT,
+        created_at TIMESTAMP DEFAULT NOW()
+      )
+    `);
+    await db.query(`
+      CREATE TABLE IF NOT EXISTS clients (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        logo_url TEXT,
+        created_at TIMESTAMP DEFAULT NOW()
+      )
+    `);
+    await db.query(`
+      CREATE TABLE IF NOT EXISTS company_info (
+        id TEXT PRIMARY KEY DEFAULT 'default',
+        name TEXT NOT NULL,
+        tagline TEXT,
+        description TEXT,
+        address_line1 TEXT,
+        address_line2 TEXT,
+        address_country TEXT,
+        phone TEXT,
+        email TEXT,
+        website TEXT,
+        profile_brief TEXT,
+        profile_mission TEXT,
+        profile_vision TEXT,
+        profile_history TEXT,
+        certifications TEXT[],
+        created_at TIMESTAMP DEFAULT NOW(),
+        updated_at TIMESTAMP DEFAULT NOW()
+      )
+    `);
+    await db.query(`
+      CREATE TABLE IF NOT EXISTS pages (
+        id TEXT PRIMARY KEY,
+        title TEXT NOT NULL,
+        slug TEXT UNIQUE NOT NULL,
+        content TEXT,
+        status TEXT DEFAULT 'draft',
+        author TEXT,
+        featured_image TEXT,
+        excerpt TEXT,
+        created_at TIMESTAMP DEFAULT NOW(),
+        updated_at TIMESTAMP DEFAULT NOW()
+      )
+    `);
+    dbInitialized = true;
+    console.log("Database tables initialized");
+    
+    const productsCount = await db.query("SELECT COUNT(*) as count FROM products");
+    if (parseInt(productsCount.rows[0].count) === 0) {
+      const { productCategories } = await import("~/data/products");
+      for (const p of productCategories) {
+        await db.query(
+          "INSERT INTO products (id, name, description, image_url) VALUES ($1, $2, $3, $4) ON CONFLICT (id) DO NOTHING",
+          [p.id, p.name, p.description, p.imageUrl]
+        );
+      }
+      console.log("Seeded products");
+    }
+    
+    const clientsCount = await db.query("SELECT COUNT(*) as count FROM clients");
+    if (parseInt(clientsCount.rows[0].count) === 0) {
+      const { clients } = await import("~/data/clients");
+      for (const c of clients) {
+        await db.query(
+          "INSERT INTO clients (id, name, logo_url) VALUES ($1, $2, $3) ON CONFLICT (id) DO NOTHING",
+          [c.id, c.name, c.logoUrl]
+        );
+      }
+      console.log("Seeded clients");
+    }
+    
+    const companyCount = await db.query("SELECT COUNT(*) as count FROM company_info");
+    if (parseInt(companyCount.rows[0].count) === 0) {
+      const { companyInfo } = await import("~/data/company");
+      await db.query(
+        `INSERT INTO company_info (id, name, tagline, description, address_line1, address_line2, address_country, phone, email, website, profile_brief, profile_mission, profile_vision, profile_history, certifications) 
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) ON CONFLICT (id) DO NOTHING`,
+        ["default", companyInfo.name, companyInfo.tagline, companyInfo.description, companyInfo.address.line1, companyInfo.address.line2, companyInfo.address.country, companyInfo.contact.phone, companyInfo.contact.email, companyInfo.contact.website, companyInfo.profile.brief, companyInfo.profile.mission, companyInfo.profile.vision, companyInfo.profile.history, companyInfo.certifications]
+      );
+      console.log("Seeded company_info");
+    }
+    
+    const pagesCount = await db.query("SELECT COUNT(*) as count FROM pages");
+    if (parseInt(pagesCount.rows[0].count) === 0) {
+      await db.query(
+        `INSERT INTO pages (id, title, slug, content, status, author, excerpt) VALUES 
+         ('1', 'Precision Engineering for Steel & Rolling Mill Industries', 'home', 'With 20+ years of experience, we deliver reliable, high-quality industrial components tailored to your requirements.', 'published', 'Admin', 'ISO 9001:2015 certified precision tool room'),
+         ('2', 'About Mauli Industries', 'about', 'Mauli Industries is an ISO 9001:2015 certified precision tool room.', 'published', 'Admin', 'Excellence in Precision Engineering'),
+         ('3', 'Contact Us', 'contact', 'Get in touch with Mauli Industries for all your precision engineering needs.', 'published', 'Admin', 'We are Here to Help You')
+         ON CONFLICT (id) DO NOTHING`
+      );
+      console.log("Seeded pages");
+    }
+  } catch (error) {
+    console.error("Error initializing database:", error);
+  }
 }
 
 export interface ProductCategory {
@@ -130,6 +243,8 @@ export async function getProducts(): Promise<ProductCategory[]> {
     }));
   }
 
+  await ensureInitialized();
+
   try {
     const result = await db.query<ProductCategory>(
       "SELECT * FROM products ORDER BY created_at ASC"
@@ -169,6 +284,8 @@ export async function getClients(): Promise<Client[]> {
     }));
   }
 
+  await ensureInitialized();
+
   try {
     const result = await db.query<Client>(
       "SELECT * FROM clients ORDER BY created_at ASC"
@@ -197,6 +314,7 @@ export async function getClients(): Promise<Client[]> {
 
 export async function getCompanyInfo(): Promise<CompanyInfo> {
   const db = getPool();
+  await ensureInitialized();
   const fallback = async () => {
     const { companyInfo } = await import("~/data/company");
     return {
@@ -256,6 +374,8 @@ export async function getPages(): Promise<Page[]> {
   if (!db) {
     return [];
   }
+
+  await ensureInitialized();
 
   try {
     const result = await db.query<Page>(

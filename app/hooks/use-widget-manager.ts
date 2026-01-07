@@ -65,9 +65,10 @@ const DEFAULT_WIDGETS: Widget[] = [
 ];
 
 export function useWidgetManager() {
-  const [widgets, setWidgets] = useState<Widget[]>([]);
+  const [widgets, setWidgets] = useState<Widget[]>(DEFAULT_WIDGETS);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     const stored = localStorage.getItem("widgets");
     if (stored) {
       try {
@@ -75,8 +76,6 @@ export function useWidgetManager() {
       } catch {
         setWidgets(DEFAULT_WIDGETS);
       }
-    } else {
-      setWidgets(DEFAULT_WIDGETS);
     }
   }, []);
 

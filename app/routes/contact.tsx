@@ -2,12 +2,20 @@ import type { Route } from "./+types/contact";
 import { MapPin, Phone, Mail, Globe } from "lucide-react";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
-import { useCompanyData, usePagesData } from "~/hooks/use-cms-data";
+import { getCompanyInfo, getPages } from "~/lib/db";
 import { Button } from "~/components/ui/button/button";
 import { Input } from "~/components/ui/input/input";
 import { Textarea } from "~/components/ui/textarea/textarea";
 import { Label } from "~/components/ui/label/label";
 import styles from "./contact.module.css";
+
+export async function loader() {
+  const [company, pages] = await Promise.all([
+    getCompanyInfo(),
+    getPages(),
+  ]);
+  return { company, pages };
+}
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -19,10 +27,9 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Contact() {
-  const company = useCompanyData();
-  const pages = usePagesData();
-  const contactPage = pages.find(p => p.slug === 'contact' && p.status === 'published');
+export default function Contact({ loaderData }: Route.ComponentProps) {
+  const { company, pages } = loaderData;
+  const contactPage = pages.find((p: any) => p.slug === 'contact' && p.status === 'published');
 
   return (
     <div className={styles.container}>
@@ -42,9 +49,9 @@ export default function Contact() {
               <div className={styles.contactItem}>
                 <MapPin className={styles.contactItemIcon} size={20} />
                 <div>
-                  <div>{company.address.line1}</div>
-                  <div>{company.address.line2}</div>
-                  <div>{company.address.country}</div>
+                  <div>{company.address_line1}</div>
+                  <div>{company.address_line2}</div>
+                  <div>{company.address_country}</div>
                 </div>
               </div>
             </div>
@@ -56,8 +63,8 @@ export default function Contact() {
             <div className={styles.cardContent}>
               <div className={styles.contactItem}>
                 <Phone className={styles.contactItemIcon} size={20} />
-                <a href={`tel:${company.contact.phone}`} className={styles.link}>
-                  {company.contact.phone}
+                <a href={`tel:${company.phone}`} className={styles.link}>
+                  {company.phone}
                 </a>
               </div>
             </div>
@@ -69,8 +76,8 @@ export default function Contact() {
             <div className={styles.cardContent}>
               <div className={styles.contactItem}>
                 <Mail className={styles.contactItemIcon} size={20} />
-                <a href={`mailto:${company.contact.email}`} className={styles.link}>
-                  {company.contact.email}
+                <a href={`mailto:${company.email}`} className={styles.link}>
+                  {company.email}
                 </a>
               </div>
               <div className={styles.contactItem}>
@@ -91,12 +98,12 @@ export default function Contact() {
               <div className={styles.contactItem}>
                 <Globe className={styles.contactItemIcon} size={20} />
                 <a
-                  href={`https://${company.contact.website}`}
+                  href={`https://${company.website}`}
                   className={styles.link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {company.contact.website}
+                  {company.website}
                 </a>
               </div>
             </div>

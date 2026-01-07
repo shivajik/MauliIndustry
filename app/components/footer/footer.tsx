@@ -1,23 +1,58 @@
 import { Link } from "react-router";
-import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
-import { useCompanyData } from "~/hooks/use-cms-data";
-import { useWidgetManager } from "~/hooks/use-widget-manager";
+import { MapPin, Phone, Mail } from "lucide-react";
+import { useAppContext } from "~/context/app-context";
 import styles from "./footer.module.css";
 
-const iconMap: Record<string, any> = {
-  MapPin,
-  Phone,
-  Mail,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Youtube
-};
+const DEFAULT_WIDGETS = [
+  {
+    id: "widget-1",
+    area: "footer-1",
+    type: "text",
+    title: "About Us",
+    content: { text: "Leading manufacturer of precision industrial components since 1995." },
+    order: 1,
+    enabled: true
+  },
+  {
+    id: "widget-2",
+    area: "footer-2",
+    type: "links",
+    title: "Quick Links",
+    content: {
+      links: [
+        { label: "Home", url: "/" },
+        { label: "About Us", url: "/about" },
+        { label: "Products & Services", url: "/products-services" },
+        { label: "Clients", url: "/clients" },
+        { label: "Contact", url: "/contact" }
+      ]
+    },
+    order: 1,
+    enabled: true
+  },
+  {
+    id: "widget-3",
+    area: "footer-3",
+    type: "contact",
+    title: "Contact Information",
+    content: {
+      contactItems: [
+        { icon: "MapPin", text: "MIDC Waluj, Aurangabad, Maharashtra, India" },
+        { icon: "Phone", text: "+91 240 2551234" },
+        { icon: "Mail", text: "info@mauliindustries.co.in" }
+      ]
+    },
+    order: 1,
+    enabled: true
+  }
+];
+
+const iconMap: Record<string, any> = { MapPin, Phone, Mail };
 
 export function Footer() {
-  const company = useCompanyData();
-  const { getWidgetsByArea } = useWidgetManager();
+  const { company } = useAppContext();
+  
+  const getWidgetsByArea = (area: string) => DEFAULT_WIDGETS.filter(w => w.area === area && w.enabled);
   
   const footer1Widgets = getWidgetsByArea("footer-1");
   const footer2Widgets = getWidgetsByArea("footer-2");
@@ -80,7 +115,7 @@ export function Footer() {
             <h3 className={styles.title}>{widget.title}</h3>
             <div className={styles.socialLinks}>
               {widget.content.socialLinks?.map((link: any, i: number) => {
-                const IconComponent = iconMap[link.platform] || Facebook;
+                const IconComponent = iconMap[link.platform] || Mail;
                 return (
                   <a
                     key={i}
@@ -113,7 +148,7 @@ export function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p className={styles.copyright}>© {new Date().getFullYear()} {company.name}. All rights reserved.</p>
+          <p className={styles.copyright}>© 2025 {company.name}. All rights reserved.</p>
           <p className={styles.credit}>
             Designed & Developed by{" "}
             <a

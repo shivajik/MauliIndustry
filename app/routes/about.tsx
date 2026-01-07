@@ -2,8 +2,16 @@ import type { Route } from "./+types/about";
 import { Building2, Target, Eye, History } from "lucide-react";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
-import { useCompanyData, usePagesData } from "~/hooks/use-cms-data";
+import { getCompanyInfo, getPages } from "~/lib/db";
 import styles from "./about.module.css";
+
+export async function loader() {
+  const [company, pages] = await Promise.all([
+    getCompanyInfo(),
+    getPages(),
+  ]);
+  return { company, pages };
+}
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -16,58 +24,16 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function About() {
-  const company = useCompanyData();
-  const pages = usePagesData();
-  const aboutPage = pages.find(p => p.slug === 'about' && p.status === 'published');
+export default function About({ loaderData }: Route.ComponentProps) {
+  const { company, pages } = loaderData;
+  const aboutPage = pages.find((p: any) => p.slug === 'about' && p.status === 'published');
 
-  // Parse the HTML content from CMS
-  const parseAboutContent = (content: string) => {
-    const sections = {
-      profile: company.profile.brief,
-      mission: company.profile.mission,
-      vision: company.profile.vision,
-      history: company.profile.history
-    };
-
-    if (!content || typeof window === 'undefined') return sections;
-
-    // Extract text from HTML headings and content
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(content, 'text/html');
-    
-    const headings = doc.querySelectorAll('h1, h2, h3');
-    
-    headings.forEach((heading) => {
-      const text = heading.textContent || '';
-      let nextElement = heading.nextElementSibling;
-      const contentParts: string[] = [];
-      
-      // Collect content until next heading
-      while (nextElement && !nextElement.matches('h1, h2, h3')) {
-        if (nextElement.textContent?.trim()) {
-          contentParts.push(nextElement.textContent.trim());
-        }
-        nextElement = nextElement.nextElementSibling;
-      }
-      
-      const sectionContent = contentParts.join('\n\n');
-      
-      if (text.toLowerCase().includes('company profile')) {
-        sections.profile = sectionContent || sections.profile;
-      } else if (text.toLowerCase().includes('mission')) {
-        sections.mission = sectionContent || sections.mission;
-      } else if (text.toLowerCase().includes('vision')) {
-        sections.vision = sectionContent || sections.vision;
-      } else if (text.toLowerCase().includes('history')) {
-        sections.history = sectionContent || sections.history;
-      }
-    });
-
-    return sections;
+  const sections = {
+    profile: company.profile_brief || '',
+    mission: company.profile_mission || '',
+    vision: company.profile_vision || '',
+    history: company.profile_history || ''
   };
-
-  const sections = parseAboutContent(aboutPage?.content || '');
 
   return (
     <div className={styles.container}>

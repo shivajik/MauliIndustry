@@ -28,10 +28,22 @@ app/
 - Dev server runs on port 5000
 - Uses SSR for improved SEO and performance
 
+## Database Integration
+The application uses Supabase PostgreSQL for data persistence:
+- **Connection**: Uses transaction pooler URL (port 6543) for Replit compatibility
+- **Auto-initialization**: Tables (products, clients, company_info, pages) are created automatically on first connection
+- **Auto-seeding**: Default data is seeded if tables are empty
+- **Fallback**: Static data files used if database unavailable
+
+### Tables
+- `products` - Product catalog (14 items)
+- `clients` - Client list (22 companies)
+- `company_info` - Company details and profile
+- `pages` - CMS pages
+
 ## Environment Variables
-The project uses Supabase and requires the following secrets:
-- `SESSION_SECRET`
-- Database connection variables (PGHOST, PGPORT, etc.)
+The project uses Supabase and requires:
+- `SUPABASE_DATABASE_URL` - Supabase transaction pooler connection string (port 6543)
 
 ## Deployment
 Configured for autoscale deployment with:
