@@ -1,8 +1,13 @@
 import type { Route } from "./+types/products-services";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
-import { useProductsData } from "~/hooks/use-cms-data";
+import { getProducts } from "~/lib/db";
 import styles from "./products-services.module.css";
+
+export async function loader() {
+  const products = await getProducts();
+  return { products };
+}
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -15,8 +20,8 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function ProductsServices() {
-  const productCategories = useProductsData();
+export default function ProductsServices({ loaderData }: Route.ComponentProps) {
+  const { products } = loaderData;
 
   return (
     <div className={styles.container}>
@@ -29,9 +34,9 @@ export default function ProductsServices() {
 
       <section className={styles.section}>
         <div className={styles.productsGrid}>
-          {productCategories.length > 0 ? productCategories.map((product) => (
+          {products.length > 0 ? products.map((product: any) => (
             <div key={product.id} className={styles.productCard}>
-              <img src={product.imageUrl || (product as any).image} alt={product.name} className={styles.productImage} />
+              <img src={product.image_url || product.imageUrl || product.image} alt={product.name} className={styles.productImage} />
               <div className={styles.productContent}>
                 <h3 className={styles.productName}>{product.name}</h3>
                 <p className={styles.productDescription}>{product.description}</p>

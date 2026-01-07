@@ -1,8 +1,13 @@
 import type { Route } from "./+types/clients";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
-import { useClientsData } from "~/hooks/use-cms-data";
+import { getClients } from "~/lib/db";
 import styles from "./clients.module.css";
+
+export async function loader() {
+  const clients = await getClients();
+  return { clients };
+}
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -14,8 +19,8 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Clients() {
-  const clients = useClientsData();
+export default function Clients({ loaderData }: Route.ComponentProps) {
+  const { clients } = loaderData;
 
   return (
     <div className={styles.container}>
@@ -34,9 +39,9 @@ export default function Clients() {
         </p>
 
         <div className={styles.clientsGrid}>
-          {clients.map((client) => (
+          {clients.map((client: any) => (
             <div key={client.id} className={styles.clientCard}>
-              <img src={client.logoUrl} alt={client.name} className={styles.clientLogo} />
+              <img src={client.logo_url || client.logoUrl} alt={client.name} className={styles.clientLogo} />
               <h3 className={styles.clientName}>{client.name}</h3>
             </div>
           ))}

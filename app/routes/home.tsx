@@ -4,13 +4,21 @@ import { ArrowRight } from "lucide-react";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
 import { Button } from "~/components/ui/button/button";
-import { useProductsData, useCompanyData, usePagesData } from "~/hooks/use-cms-data";
+import { getProducts, getCompanyInfo, getPages } from "~/lib/db";
 import { extractTextFromHtml } from "~/utils/html-utils";
 import styles from "./home.module.css";
 
+export async function loader() {
+  const [products, company, pages] = await Promise.all([
+    getProducts(),
+    getCompanyInfo(),
+    getPages(),
+  ]);
+  
+  return { products, company, pages };
+}
+
 export function meta({}: Route.MetaArgs) {
-  // Note: meta functions run on server, so we can't use hooks here
-  // Using default values - actual dynamic content is rendered in component
   return [
     { title: "Mauli Industries - Precision Engineering for Steel & Rolling Mill Industries" },
     {
@@ -21,13 +29,11 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Home() {
-  const products = useProductsData();
-  const company = useCompanyData();
-  const pages = usePagesData();
+export default function Home({ loaderData }: Route.ComponentProps) {
+  const { products, company, pages } = loaderData;
   const featuredProducts = products.slice(0, 6);
   
-  const homePage = pages.find(p => p.slug === 'home' && p.status === 'published');
+  const homePage = pages.find((p: any) => p.slug === 'home' && p.status === 'published');
 
   return (
     <div className={styles.container}>
@@ -56,9 +62,9 @@ export default function Home() {
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Featured Products & Services</h2>
         <div className={styles.productsGrid}>
-          {featuredProducts.map((product) => (
+          {featuredProducts.map((product: any) => (
             <div key={product.id} className={styles.productCard}>
-              <img src={product.imageUrl || (product as any).image} alt={product.name} className={styles.productImage} />
+              <img src={product.image_url || product.imageUrl || product.image} alt={product.name} className={styles.productImage} />
               <div className={styles.productContent}>
                 <h3 className={styles.productName}>{product.name}</h3>
                 <p className={styles.productDescription}>{product.description}</p>
