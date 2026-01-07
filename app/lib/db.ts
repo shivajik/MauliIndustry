@@ -3,7 +3,12 @@ import dns from "dns";
 
 dns.setDefaultResultOrder("ipv4first");
 
-const connectionString = process.env.SUPABASE_DATABASE_URL;
+function sanitizeConnectionString(url: string | undefined): string | undefined {
+  if (!url) return undefined;
+  return url.replace(/@db@/g, '@');
+}
+
+const connectionString = sanitizeConnectionString(process.env.SUPABASE_DATABASE_URL);
 
 let pool: pg.Pool | null = null;
 
