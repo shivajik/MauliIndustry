@@ -6,6 +6,7 @@ export default [
   route("products-services", "routes/products-services.tsx"),
   route("clients", "routes/clients.tsx"),
   route("contact", "routes/contact.tsx"),
+  route("admin", "routes/admin.tsx"), // Redirects to /admin/login
   route("admin/login", "routes/admin/login.tsx"),
   route("admin/dashboard", "routes/admin/dashboard.tsx"),
   // API Routes
