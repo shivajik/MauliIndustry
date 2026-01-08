@@ -6,53 +6,58 @@ export interface Client {
 
 export const clients: Client[] = [
   {
-    id: "welspun",
-    name: "Welspun Steel Ltd",
-    logoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
-  },
-  {
     id: "hulas",
     name: "Hulas Wire Industries Limited",
-    logoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
+    logoUrl: "/images/logos/hulas.png",
   },
   {
-    id: "venus",
-    name: "Venus Alloys Private Limited, Mandsaur",
-    logoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
+    id: "pan-tmt",
+    name: "Pan TMT (Venus Alloys Private Limited)",
+    logoUrl: "/images/logos/pan-tmt.png",
   },
   {
-    id: "rathi-iron",
-    name: "Rathi Iron & Steel Industries Ltd",
-    logoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
+    id: "moyra",
+    name: "Moyra Saria (Rathi Iron & Steel Industries Ltd)",
+    logoUrl: "/images/logos/moyra.jpg",
   },
   {
     id: "omsairam",
     name: "Omsairam Steels and Alloys Pvt Ltd",
-    logoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
+    logoUrl: "/images/logos/omsairam.jpg",
   },
   {
     id: "bhagyalaxmi",
     name: "Bhagyalaxmi Rolling Mill Private Limited",
-    logoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
+    logoUrl: "/images/logos/bhagyalaxmi.png",
   },
   {
-    id: "metarolls",
-    name: "Metarolls Ispat Pvt Ltd",
-    logoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
+    id: "icon-steel",
+    name: "Icon Steel (Metarolls Ispat Pvt Ltd)",
+    logoUrl: "/images/logos/icon-steel.png",
   },
   {
-    id: "rathi-steel",
-    name: "Rathi Steel and Metal Private Limited",
-    logoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
+    id: "metaroll",
+    name: "Metaroll Steel",
+    logoUrl: "/images/logos/metaroll.png",
   },
   {
     id: "srj",
     name: "SRJ Peety Steels Private Limited",
-    logoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
+    logoUrl: "/images/logos/srj.png",
   },
   {
     id: "rajuri",
     name: "Rajuri Steels and TMT Bars Pvt Ltd",
+    logoUrl: "/images/logos/rajuri.jpg",
+  },
+  {
+    id: "gspl",
+    name: "GSPL Steel",
+    logoUrl: "/images/logos/gspl.jpg",
+  },
+  {
+    id: "welspun",
+    name: "Welspun Steel Ltd",
     logoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
   },
   {
