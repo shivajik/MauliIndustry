@@ -26,17 +26,28 @@ export default function AdminLogin() {
     setError("");
     setIsLoading(true);
 
-    // Mock authentication - in production, this would call an API
-    setTimeout(() => {
-      if (email === "admin@mauliindustries.co.in" && password === "admin123") {
-        // Store auth state (in production, use proper auth tokens)
+    try {
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include", // Important: include cookies
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Session cookie is automatically stored by browser
         sessionStorage.setItem("isAuthenticated", "true");
         navigate("/admin/dashboard");
       } else {
-        setError("Invalid email or password");
+        setError(data.error || "Invalid email or password");
         setIsLoading(false);
       }
-    }, 1000);
+    } catch (err) {
+      setError("Failed to connect to server. Please try again.");
+      setIsLoading(false);
+    }
   };
 
   return (

@@ -13,17 +13,20 @@ const connectionString = sanitizeConnectionString(process.env.SUPABASE_DATABASE_
 let pool: pg.Pool | null = null;
 let dbInitialized = false;
 
-function getPool(): pg.Pool | null {
+export function getPool(): pg.Pool | null {
   if (!connectionString) {
     console.warn("SUPABASE_DATABASE_URL not configured. Using fallback data.");
     return null;
   }
 
   if (!pool) {
+    // For Vercel serverless: use smaller connection pool
+    // Vercel functions have connection limits, so max: 2 is safer
+    const isVercel = process.env.VERCEL === "1";
     pool = new pg.Pool({
       connectionString,
       ssl: { rejectUnauthorized: false },
-      max: 5,
+      max: isVercel ? 2 : 5, // Smaller pool for serverless
       idleTimeoutMillis: 30000,
       connectionTimeoutMillis: 10000,
     });

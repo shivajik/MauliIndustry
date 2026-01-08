@@ -1,11 +1,11 @@
 import type { Route } from "./+types/products-services";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
-import { getProducts } from "~/lib/db";
+import { dbService } from "~/lib/services/database";
 import styles from "./products-services.module.css";
 
 export async function loader() {
-  const products = await getProducts();
+  const products = await dbService.getProducts();
   return { products };
 }
 

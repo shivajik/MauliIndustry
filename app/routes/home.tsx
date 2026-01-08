@@ -4,15 +4,15 @@ import { ArrowRight } from "lucide-react";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
 import { Button } from "~/components/ui/button/button";
-import { getProducts, getCompanyInfo, getPages } from "~/lib/db";
+import { dbService } from "~/lib/services/database";
 import { extractTextFromHtml } from "~/utils/html-utils";
 import styles from "./home.module.css";
 
 export async function loader() {
   const [products, company, pages] = await Promise.all([
-    getProducts(),
-    getCompanyInfo(),
-    getPages(),
+    dbService.getProducts(),
+    dbService.getCompanyInfo(),
+    dbService.getPages(),
   ]);
   
   return { products, company, pages };

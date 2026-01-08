@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Save, X, Globe, Mail, MapPin, Phone, Clock } from "lucide-react";
-import { useCmsData } from "../../hooks/use-cms-data";
+import { useCmsDataApi as useCmsData } from "../../hooks/use-cms-data-api";
 import { Button } from "../ui/button/button";
 import { Input } from "../ui/input/input";
 import { Textarea } from "../ui/textarea/textarea";

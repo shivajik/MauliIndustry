@@ -1,11 +1,11 @@
 import type { Route } from "./+types/clients";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
-import { getClients } from "~/lib/db";
+import { dbService } from "~/lib/services/database";
 import styles from "./clients.module.css";
 
 export async function loader() {
-  const clients = await getClients();
+  const clients = await dbService.getClients();
   return { clients };
 }
 

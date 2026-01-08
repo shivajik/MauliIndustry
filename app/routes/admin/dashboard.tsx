@@ -29,7 +29,7 @@ import {
   Image,
   Code,
 } from "lucide-react";
-import { useCmsData } from "../../hooks/use-cms-data";
+import { useCmsDataApi as useCmsData } from "../../hooks/use-cms-data-api";
 import { Button } from "../../components/ui/button/button";
 import { Input } from "../../components/ui/input/input";
 import { Textarea } from "../../components/ui/textarea/textarea";

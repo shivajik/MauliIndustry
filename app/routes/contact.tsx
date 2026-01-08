@@ -2,7 +2,7 @@ import type { Route } from "./+types/contact";
 import { MapPin, Phone, Mail, Globe } from "lucide-react";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
-import { getCompanyInfo, getPages } from "~/lib/db";
+import { dbService } from "~/lib/services/database";
 import { Button } from "~/components/ui/button/button";
 import { Input } from "~/components/ui/input/input";
 import { Textarea } from "~/components/ui/textarea/textarea";
@@ -11,8 +11,8 @@ import styles from "./contact.module.css";
 
 export async function loader() {
   const [company, pages] = await Promise.all([
-    getCompanyInfo(),
-    getPages(),
+    dbService.getCompanyInfo(),
+    dbService.getPages(),
   ]);
   return { company, pages };
 }

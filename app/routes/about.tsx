@@ -2,13 +2,14 @@ import type { Route } from "./+types/about";
 import { Building2, Target, Eye, History } from "lucide-react";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
-import { getCompanyInfo, getPages } from "~/lib/db";
+import { dbService } from "~/lib/services/database";
+import { extractTextFromHtml } from "~/utils/html-utils";
 import styles from "./about.module.css";
 
 export async function loader() {
   const [company, pages] = await Promise.all([
-    getCompanyInfo(),
-    getPages(),
+    dbService.getCompanyInfo(),
+    dbService.getPages(),
   ]);
   return { company, pages };
 }
@@ -28,8 +29,9 @@ export default function About({ loaderData }: Route.ComponentProps) {
   const { company, pages } = loaderData;
   const aboutPage = pages.find((p: any) => p.slug === 'about' && p.status === 'published');
 
+  // Use page content if available, otherwise fall back to company info
   const sections = {
-    profile: company.profile_brief || '',
+    profile: aboutPage?.content || company.profile_brief || '',
     mission: company.profile_mission || '',
     vision: company.profile_vision || '',
     history: company.profile_history || ''
@@ -50,9 +52,19 @@ export default function About({ loaderData }: Route.ComponentProps) {
           Company Profile
         </h2>
         <div className={styles.sectionText}>
-          {sections.profile.split('\n\n').map((para, i) => (
-            <p key={i}>{para}</p>
-          ))}
+          {sections.profile ? (
+            // If content contains HTML, render it
+            sections.profile.includes('<') ? (
+              <div dangerouslySetInnerHTML={{ __html: sections.profile }} />
+            ) : (
+              // Plain text content - split by paragraphs
+              sections.profile.split('\n\n').filter(p => p.trim()).map((para, i) => (
+                <p key={i}>{para}</p>
+              ))
+            )
+          ) : (
+            <p>Content coming soon...</p>
+          )}
         </div>
       </section>
 
