@@ -232,6 +232,7 @@ export class DatabaseService {
           id: c.id,
           name: c.name,
           logo_url: c.logo_url || "",
+          logoUrl: c.logo_url || "",
           created_at: c.created_at,
         }));
       } catch (error) {
@@ -242,7 +243,10 @@ export class DatabaseService {
     if (this.pool) {
       try {
         const result = await this.pool.query<Client>("SELECT * FROM clients ORDER BY created_at ASC");
-        return result.rows;
+        return result.rows.map(c => ({
+          ...c,
+          logoUrl: c.logo_url || (c as any).logoUrl
+        }));
       } catch (error) {
         console.error("Error fetching clients from pool:", error);
       }
@@ -253,6 +257,7 @@ export class DatabaseService {
       id: c.id,
       name: c.name,
       logo_url: c.logoUrl,
+      logoUrl: c.logoUrl,
     }));
   }
 
