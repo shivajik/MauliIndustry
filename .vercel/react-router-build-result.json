@@ -1,0 +1,363 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs_eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "routes/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/about": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/products-services": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/clients": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/contact": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin/login": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin/dashboard": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api/products": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api/products.$id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api/clients": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api/clients.$id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api/company": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api/pages": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api/pages.$id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api/auth.login": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "app/root.tsx",
+        "path": "",
+        "config": {}
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "app/routes/home.tsx",
+        "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/about": {
+        "id": "routes/about",
+        "parentId": "root",
+        "file": "app/routes/about.tsx",
+        "path": "about",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/products-services": {
+        "id": "routes/products-services",
+        "parentId": "root",
+        "file": "app/routes/products-services.tsx",
+        "path": "products-services",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/clients": {
+        "id": "routes/clients",
+        "parentId": "root",
+        "file": "app/routes/clients.tsx",
+        "path": "clients",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/contact": {
+        "id": "routes/contact",
+        "parentId": "root",
+        "file": "app/routes/contact.tsx",
+        "path": "contact",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin/login": {
+        "id": "routes/admin/login",
+        "parentId": "root",
+        "file": "app/routes/admin/login.tsx",
+        "path": "admin/login",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin/dashboard": {
+        "id": "routes/admin/dashboard",
+        "parentId": "root",
+        "file": "app/routes/admin/dashboard.tsx",
+        "path": "admin/dashboard",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api/products": {
+        "id": "routes/api/products",
+        "parentId": "root",
+        "file": "app/routes/api/products.tsx",
+        "path": "api/products",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api/products.$id": {
+        "id": "routes/api/products.$id",
+        "parentId": "root",
+        "file": "app/routes/api/products.$id.tsx",
+        "path": "api/products/:id",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api/clients": {
+        "id": "routes/api/clients",
+        "parentId": "root",
+        "file": "app/routes/api/clients.tsx",
+        "path": "api/clients",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api/clients.$id": {
+        "id": "routes/api/clients.$id",
+        "parentId": "root",
+        "file": "app/routes/api/clients.$id.tsx",
+        "path": "api/clients/:id",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api/company": {
+        "id": "routes/api/company",
+        "parentId": "root",
+        "file": "app/routes/api/company.tsx",
+        "path": "api/company",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api/pages": {
+        "id": "routes/api/pages",
+        "parentId": "root",
+        "file": "app/routes/api/pages.tsx",
+        "path": "api/pages",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api/pages.$id": {
+        "id": "routes/api/pages.$id",
+        "parentId": "root",
+        "file": "app/routes/api/pages.$id.tsx",
+        "path": "api/pages/:id",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api/auth.login": {
+        "id": "routes/api/auth.login",
+        "parentId": "root",
+        "file": "app/routes/api/auth.login.tsx",
+        "path": "api/auth/login",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    }
+  },
+  "reactRouterConfig": {
+    "appDirectory": "D:/Website Work/Mauli Enterprices/mauli-cursor/MauliIndustry/app",
+    "basename": "/",
+    "buildDirectory": "D:/Website Work/Mauli Enterprices/mauli-cursor/MauliIndustry/build",
+    "future": {
+      "unstable_optimizeDeps": true,
+      "unstable_subResourceIntegrity": false,
+      "v8_middleware": false,
+      "v8_splitRouteModules": false,
+      "v8_viteEnvironmentApi": false
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "root.tsx",
+        "path": ""
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "routes/home.tsx",
+        "index": true
+      },
+      "routes/about": {
+        "id": "routes/about",
+        "parentId": "root",
+        "file": "routes/about.tsx",
+        "path": "about"
+      },
+      "routes/products-services": {
+        "id": "routes/products-services",
+        "parentId": "root",
+        "file": "routes/products-services.tsx",
+        "path": "products-services"
+      },
+      "routes/clients": {
+        "id": "routes/clients",
+        "parentId": "root",
+        "file": "routes/clients.tsx",
+        "path": "clients"
+      },
+      "routes/contact": {
+        "id": "routes/contact",
+        "parentId": "root",
+        "file": "routes/contact.tsx",
+        "path": "contact"
+      },
+      "routes/admin/login": {
+        "id": "routes/admin/login",
+        "parentId": "root",
+        "file": "routes/admin/login.tsx",
+        "path": "admin/login"
+      },
+      "routes/admin/dashboard": {
+        "id": "routes/admin/dashboard",
+        "parentId": "root",
+        "file": "routes/admin/dashboard.tsx",
+        "path": "admin/dashboard"
+      },
+      "routes/api/products": {
+        "id": "routes/api/products",
+        "parentId": "root",
+        "file": "routes/api/products.tsx",
+        "path": "api/products"
+      },
+      "routes/api/products.$id": {
+        "id": "routes/api/products.$id",
+        "parentId": "root",
+        "file": "routes/api/products.$id.tsx",
+        "path": "api/products/:id"
+      },
+      "routes/api/clients": {
+        "id": "routes/api/clients",
+        "parentId": "root",
+        "file": "routes/api/clients.tsx",
+        "path": "api/clients"
+      },
+      "routes/api/clients.$id": {
+        "id": "routes/api/clients.$id",
+        "parentId": "root",
+        "file": "routes/api/clients.$id.tsx",
+        "path": "api/clients/:id"
+      },
+      "routes/api/company": {
+        "id": "routes/api/company",
+        "parentId": "root",
+        "file": "routes/api/company.tsx",
+        "path": "api/company"
+      },
+      "routes/api/pages": {
+        "id": "routes/api/pages",
+        "parentId": "root",
+        "file": "routes/api/pages.tsx",
+        "path": "api/pages"
+      },
+      "routes/api/pages.$id": {
+        "id": "routes/api/pages.$id",
+        "parentId": "root",
+        "file": "routes/api/pages.$id.tsx",
+        "path": "api/pages/:id"
+      },
+      "routes/api/auth.login": {
+        "id": "routes/api/auth.login",
+        "parentId": "root",
+        "file": "routes/api/auth.login.tsx",
+        "path": "api/auth/login"
+      }
+    },
+    "routeDiscovery": {
+      "mode": "lazy",
+      "manifestPath": "/__manifest"
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true,
+    "unstable_routeConfig": [
+      {
+        "id": "root",
+        "path": "",
+        "file": "root.tsx",
+        "children": [
+          {
+            "file": "routes/home.tsx",
+            "index": true
+          },
+          {
+            "file": "routes/about.tsx",
+            "path": "about"
+          },
+          {
+            "file": "routes/products-services.tsx",
+            "path": "products-services"
+          },
+          {
+            "file": "routes/clients.tsx",
+            "path": "clients"
+          },
+          {
+            "file": "routes/contact.tsx",
+            "path": "contact"
+          },
+          {
+            "file": "routes/admin/login.tsx",
+            "path": "admin/login"
+          },
+          {
+            "file": "routes/admin/dashboard.tsx",
+            "path": "admin/dashboard"
+          },
+          {
+            "file": "routes/api/products.tsx",
+            "path": "api/products"
+          },
+          {
+            "file": "routes/api/products.$id.tsx",
+            "path": "api/products/:id"
+          },
+          {
+            "file": "routes/api/clients.tsx",
+            "path": "api/clients"
+          },
+          {
+            "file": "routes/api/clients.$id.tsx",
+            "path": "api/clients/:id"
+          },
+          {
+            "file": "routes/api/company.tsx",
+            "path": "api/company"
+          },
+          {
+            "file": "routes/api/pages.tsx",
+            "path": "api/pages"
+          },
+          {
+            "file": "routes/api/pages.$id.tsx",
+            "path": "api/pages/:id"
+          },
+          {
+            "file": "routes/api/auth.login.tsx",
+            "path": "api/auth/login"
+          }
+        ]
+      }
+    ]
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}
