@@ -58,22 +58,22 @@ export const clients: Client[] = [
   {
     id: "welspun",
     name: "Welspun Steel Ltd",
-    logoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
+    logoUrl: "/images/logos/welspun.png",
   },
   {
     id: "mylan",
     name: "Mylan Laboratories",
-    logoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
+    logoUrl: "/images/logos/mylan.png",
   },
   {
     id: "lupin",
     name: "Lupin Pharmaceuticals",
-    logoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
+    logoUrl: "/images/logos/lupin.png",
   },
   {
     id: "ipca",
     name: "Ipca Laboratories Ltd",
-    logoUrl: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&q=80",
+    logoUrl: "/images/logos/ipca.png",
   },
   {
     id: "ajanta",
