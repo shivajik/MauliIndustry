@@ -108,6 +108,20 @@
   text-decoration: underline;
 }
 
+.mapSection {
+  padding: var(--space-8) var(--space-5);
+  background-color: var(--color-neutral-1);
+}
+
+.mapContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: var(--radius-4);
+  overflow: hidden;
+  border: var(--border-size-1) solid var(--color-neutral-6);
+  box-shadow: var(--shadow-2);
+}
+
 .formSection {
   padding: var(--space-8) var(--space-5);
   background-color: var(--color-neutral-2);

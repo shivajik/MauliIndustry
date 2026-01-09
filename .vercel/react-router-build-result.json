@@ -15,6 +15,7 @@
       "routes/products-services": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/clients": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/contact": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/admin/login": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/admin/dashboard": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/api/products": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
@@ -74,6 +75,15 @@
         "parentId": "root",
         "file": "app/routes/contact.tsx",
         "path": "contact",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin": {
+        "id": "routes/admin",
+        "parentId": "root",
+        "file": "app/routes/admin.tsx",
+        "path": "admin",
         "config": {
           "runtime": "nodejs"
         }
@@ -171,9 +181,9 @@
     }
   },
   "reactRouterConfig": {
-    "appDirectory": "D:/Website Work/Mauli Enterprices/mauli-cursor/MauliIndustry/app",
+    "appDirectory": "/home/runner/workspace/app",
     "basename": "/",
-    "buildDirectory": "D:/Website Work/Mauli Enterprices/mauli-cursor/MauliIndustry/build",
+    "buildDirectory": "/home/runner/workspace/build",
     "future": {
       "unstable_optimizeDeps": true,
       "unstable_subResourceIntegrity": false,
@@ -216,6 +226,12 @@
         "parentId": "root",
         "file": "routes/contact.tsx",
         "path": "contact"
+      },
+      "routes/admin": {
+        "id": "routes/admin",
+        "parentId": "root",
+        "file": "routes/admin.tsx",
+        "path": "admin"
       },
       "routes/admin/login": {
         "id": "routes/admin/login",
@@ -310,6 +326,10 @@
           {
             "file": "routes/contact.tsx",
             "path": "contact"
+          },
+          {
+            "file": "routes/admin.tsx",
+            "path": "admin"
           },
           {
             "file": "routes/admin/login.tsx",
