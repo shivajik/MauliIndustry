@@ -30,7 +30,7 @@ export async function action({ request }: ActionFunctionArgs) {
         status: 200,
         headers: {
           "Content-Type": "application/json",
-          "Set-Cookie": `session-id=${sessionId}; HttpOnly; Path=/; Max-Age=${24 * 60 * 60}; SameSite=Lax`,
+          "Set-Cookie": `session-id=${sessionId}; HttpOnly; Secure; Path=/; Max-Age=${24 * 60 * 60}; SameSite=Lax`,
         },
       }
     );
