@@ -187,6 +187,7 @@
     "future": {
       "unstable_optimizeDeps": true,
       "unstable_subResourceIntegrity": false,
+      "unstable_trailingSlashAwareDataRequests": false,
       "v8_middleware": false,
       "v8_splitRouteModules": false,
       "v8_viteEnvironmentApi": false
@@ -301,6 +302,7 @@
     "serverBuildFile": "index.js",
     "serverModuleFormat": "esm",
     "ssr": true,
+    "allowedActionOrigins": false,
     "unstable_routeConfig": [
       {
         "id": "root",
