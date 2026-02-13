@@ -48,7 +48,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
           </p>
           <div className={styles.heroButtons}>
             <Button asChild size="lg">
-              <Link to="/products-services">
+              <Link to="/products">
                 Explore Products <ArrowRight size={20} />
               </Link>
             </Button>

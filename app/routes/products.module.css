@@ -1,0 +1,115 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--color-brand-11) 0%, var(--color-brand-9) 100%);
+  color: var(--color-brand-1);
+  padding: var(--space-8) var(--space-5);
+  text-align: center;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-3);
+  color: var(--color-brand-1);
+}
+
+.heroSubtitle {
+  font-family: var(--font-subheading);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-brand-3);
+}
+
+.section {
+  padding: var(--space-8) var(--space-5);
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-6);
+}
+
+.productCard {
+  background-color: var(--color-neutral-1);
+  border: var(--border-size-1) solid var(--color-neutral-6);
+  border-radius: var(--radius-4);
+  overflow: hidden;
+  transition: all 0.3s var(--ease);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.productCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-3);
+  border-color: var(--color-brand-7);
+}
+
+.productImage {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background-color: var(--color-neutral-2);
+}
+
+.productContent {
+  padding: var(--space-5);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.productName {
+  font-family: var(--font-heading);
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-3);
+  color: var(--color-brand-11);
+}
+
+.productDescription {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: var(--color-neutral-11);
+  flex: 1;
+}
+
+.noProducts {
+  text-align: center;
+  color: var(--color-neutral-11);
+  grid-column: 1 / -1;
+  padding: var(--space-8);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .section {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .productsGrid {
+    grid-template-columns: 1fr;
+  }
+}
