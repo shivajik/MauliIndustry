@@ -1,15 +1,10 @@
-import type { Route } from "./+types/products";
+import { Link } from "react-router";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
-import { dbService } from "~/lib/services/database";
+import { productCategories } from "~/data/products";
 import styles from "./products.module.css";
 
-export async function loader() {
-  const products = await dbService.getProducts();
-  return { products };
-}
-
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
     { title: "Our Products - Mauli Industries" },
     {
@@ -19,9 +14,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Products({ loaderData }: Route.ComponentProps) {
-  const { products } = loaderData;
-
+export default function Products() {
   return (
     <div className={styles.container}>
       <Header />
@@ -33,17 +26,25 @@ export default function Products({ loaderData }: Route.ComponentProps) {
 
       <section className={styles.section}>
         <div className={styles.productsGrid}>
-          {products.length > 0 ? products.map((product: any) => (
-            <div key={product.id} className={styles.productCard}>
-              <img src={product.image_url || product.imageUrl || product.image} alt={product.name} className={styles.productImage} />
+          {productCategories.map((product) => (
+            <Link key={product.id} to={`/products/${product.id}`} className={styles.productCard}>
+              <img src={product.imageUrl} alt={product.name} className={styles.productImage} />
               <div className={styles.productContent}>
                 <h3 className={styles.productName}>{product.name}</h3>
                 <p className={styles.productDescription}>{product.description}</p>
+                {product.subProducts && product.subProducts.length > 0 && (
+                  <div className={styles.subProducts}>
+                    <p className={styles.subProductsLabel}>Includes:</p>
+                    <ul className={styles.subProductsList}>
+                      {product.subProducts.map((sub, i) => (
+                        <li key={i}>{sub}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
-            </div>
-          )) : (
-            <p className={styles.noProducts}>No products available.</p>
-          )}
+            </Link>
+          ))}
         </div>
       </section>
 
