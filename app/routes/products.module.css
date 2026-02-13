@@ -93,6 +93,37 @@
   flex: 1;
 }
 
+.subProducts {
+  margin-top: var(--space-3);
+  border-top: var(--border-size-1) solid var(--color-neutral-4);
+  padding-top: var(--space-3);
+}
+
+.subProductsLabel {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-brand-9);
+  margin-bottom: var(--space-2);
+}
+
+.subProductsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.subProductsList li {
+  font-size: 0.8rem;
+  background-color: var(--color-neutral-3);
+  color: var(--color-neutral-11);
+  padding: 2px 8px;
+  border-radius: var(--radius-2);
+}
+
 .noProducts {
   text-align: center;
   color: var(--color-neutral-11);

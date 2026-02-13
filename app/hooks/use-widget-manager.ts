@@ -39,7 +39,8 @@ const DEFAULT_WIDGETS: Widget[] = [
       links: [
         { label: "Home", url: "/" },
         { label: "About Us", url: "/about" },
-        { label: "Products & Services", url: "/products-services" },
+        { label: "Products", url: "/products" },
+        { label: "Services", url: "/services" },
         { label: "Clients", url: "/clients" },
         { label: "Contact", url: "/contact" }
       ]
