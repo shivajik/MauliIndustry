@@ -5,10 +5,19 @@
 }
 
 .hero {
-  background: linear-gradient(135deg, var(--color-brand-11) 0%, var(--color-brand-9) 100%);
+  background: linear-gradient(160deg, var(--color-brand-12) 0%, var(--color-brand-11) 40%, var(--color-brand-9) 100%);
   color: var(--color-brand-1);
   padding: var(--space-8) var(--space-5);
   text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 60% 40%, rgba(255,255,255,0.06) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .heroTitle {
@@ -19,44 +28,45 @@
   letter-spacing: -0.02em;
   margin-bottom: var(--space-3);
   color: var(--color-brand-1);
+  position: relative;
 }
 
 .heroSubtitle {
-  font-family: var(--font-subheading);
+  font-family: var(--font-heading);
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   font-weight: 400;
   line-height: 1.4;
   color: var(--color-brand-3);
+  position: relative;
 }
 
 .section {
   padding: var(--space-8) var(--space-5);
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
 }
 
 .intro {
   font-family: var(--font-body);
-  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-size: clamp(0.95rem, 1.8vw, 1.08rem);
   font-weight: 400;
-  line-height: 1.7;
-  letter-spacing: 0.01em;
+  line-height: 1.75;
   text-align: center;
   max-width: 800px;
   margin: 0 auto var(--space-8);
-  color: var(--color-neutral-11);
+  color: var(--color-neutral-10);
 }
 
 .clientsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: var(--space-5);
 }
 
 .clientCard {
   background-color: var(--color-neutral-1);
-  border: var(--border-size-1) solid var(--color-neutral-6);
+  border: var(--border-size-1) solid var(--color-neutral-5);
   border-radius: var(--radius-4);
   padding: var(--space-6);
   display: flex;
@@ -64,29 +74,36 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: all 0.3s var(--ease);
+  transition: all 0.35s var(--ease);
   min-height: 180px;
+  box-shadow: var(--shadow-premium);
 }
 
 .clientCard:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-3);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card-hover);
   border-color: var(--color-brand-7);
 }
 
 .clientLogo {
-  width: 200px;
-  height: 120px;
+  width: 180px;
+  height: 100px;
   object-fit: contain;
   margin-bottom: var(--space-4);
   border-radius: var(--radius-2);
+  filter: light-dark(grayscale(0.2), grayscale(0.3) brightness(1.1));
+  transition: filter 0.3s ease;
+}
+
+.clientCard:hover .clientLogo {
+  filter: grayscale(0) brightness(1);
 }
 
 .clientName {
   font-family: var(--font-heading);
-  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  font-size: clamp(0.88rem, 1.4vw, 0.95rem);
   font-weight: 600;
-  letter-spacing: -0.005em;
+  letter-spacing: 0;
   color: var(--color-brand-11);
 }
 
@@ -99,6 +116,13 @@
     padding: var(--space-6) var(--space-4);
   }
 
+  .clientsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
   .clientsGrid {
     grid-template-columns: 1fr;
   }

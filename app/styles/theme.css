@@ -1,10 +1,10 @@
-/* Typography */
+/* Typography - Premium Corporate */
 html {
-  --font-display: Montserrat, sans-serif;
-  --font-heading: Montserrat, sans-serif;
-  --font-subheading: Montserrat, sans-serif;
-  --font-body: 'Open Sans', sans-serif;
-  --font-caption: 'Open Sans', sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-heading: 'Raleway', 'Segoe UI', sans-serif;
+  --font-subheading: 'Raleway', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-caption: 'Inter', 'Segoe UI', system-ui, sans-serif;
   --font-code: monospace;
 }
 
@@ -69,7 +69,7 @@ html {
   --color-success-12: var(--green-12);
   --color-success-contrast: var(--green-contrast);
 
-  /* Brand colors - Deep industrial blue */
+  /* Brand colors - Deep industrial indigo */
   --color-brand-1: var(--indigo-1);
   --color-brand-2: var(--indigo-2);
   --color-brand-3: var(--indigo-3);
@@ -84,18 +84,23 @@ html {
   --color-brand-12: var(--indigo-12);
   --color-brand-contrast: var(--indigo-contrast);
 
-  /* Highlight color - Warm bronze accent */
-  --color-highlight-1: var(--bronze-1);
-  --color-highlight-2: var(--bronze-2);
-  --color-highlight-3: var(--bronze-3);
-  --color-highlight-4: var(--bronze-4);
-  --color-highlight-5: var(--bronze-5);
-  --color-highlight-6: var(--bronze-6);
-  --color-highlight-7: var(--bronze-7);
-  --color-highlight-8: var(--bronze-8);
-  --color-highlight-9: var(--bronze-9);
-  --color-highlight-10: var(--bronze-10);
-  --color-highlight-11: var(--bronze-11);
-  --color-highlight-12: var(--bronze-12);
-  --color-highlight-contrast: var(--bronze-contrast);
+  /* Highlight color - Warm amber accent */
+  --color-highlight-1: var(--amber-1);
+  --color-highlight-2: var(--amber-2);
+  --color-highlight-3: var(--amber-3);
+  --color-highlight-4: var(--amber-4);
+  --color-highlight-5: var(--amber-5);
+  --color-highlight-6: var(--amber-6);
+  --color-highlight-7: var(--amber-7);
+  --color-highlight-8: var(--amber-8);
+  --color-highlight-9: var(--amber-9);
+  --color-highlight-10: var(--amber-10);
+  --color-highlight-11: var(--amber-11);
+  --color-highlight-12: var(--amber-12);
+  --color-highlight-contrast: var(--amber-contrast);
+
+  /* Premium shadows */
+  --shadow-premium: 0 4px 20px -4px light-dark(rgba(0,0,0,0.08), rgba(0,0,0,0.3));
+  --shadow-card-hover: 0 12px 40px -8px light-dark(rgba(0,0,0,0.12), rgba(0,0,0,0.4));
+  --shadow-hero: 0 20px 60px -12px rgba(0,0,0,0.25);
 }

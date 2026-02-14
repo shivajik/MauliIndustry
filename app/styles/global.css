@@ -44,13 +44,30 @@ h3 {
 p {
   font-family: var(--font-body);
   color: var(--color-neutral-11);
-  line-height: 1.6;
+  line-height: 1.65;
   letter-spacing: 0.01em;
   margin: 0;
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better selection */
+::selection {
+  background-color: var(--color-brand-4);
+  color: var(--color-brand-12);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--color-brand-9);
+  outline-offset: 2px;
 }
 
 .sr-only {
