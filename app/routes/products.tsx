@@ -32,16 +32,6 @@ export default function Products() {
               <div className={styles.productContent}>
                 <h3 className={styles.productName}>{product.name}</h3>
                 <p className={styles.productDescription}>{product.description}</p>
-                {product.subProducts && product.subProducts.length > 0 && (
-                  <div className={styles.subProducts}>
-                    <p className={styles.subProductsLabel}>Includes:</p>
-                    <ul className={styles.subProductsList}>
-                      {product.subProducts.map((sub, i) => (
-                        <li key={i}>{sub}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
               </div>
             </Link>
           ))}

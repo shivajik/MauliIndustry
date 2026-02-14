@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
-import { productCategories } from "~/data/products";
-import { ArrowLeft } from "lucide-react";
+import { productCategories, type SubProduct } from "~/data/products";
+import { ArrowLeft, ChevronDown, ChevronUp } from "lucide-react";
 import styles from "./product-detail.module.css";
 
 export function meta({ params }: { params: { id: string } }) {
@@ -14,6 +15,51 @@ export function meta({ params }: { params: { id: string } }) {
       content: product?.description || "Product details from Mauli Industries",
     },
   ];
+}
+
+function SubProductCard({ sub, index }: { sub: SubProduct; index: number }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className={`${styles.subProductCard} ${expanded ? styles.subProductCardExpanded : ""}`}>
+      <button
+        className={styles.subProductHeader}
+        onClick={() => sub.specs && sub.specs.length > 0 && setExpanded(!expanded)}
+        type="button"
+      >
+        <span className={styles.subProductNumber}>{index + 1}</span>
+        <div className={styles.subProductInfo}>
+          <span className={styles.subProductName}>{sub.name}</span>
+          <p className={styles.subProductDesc}>{sub.description}</p>
+        </div>
+        {sub.specs && sub.specs.length > 0 && (
+          <span className={styles.expandIcon}>
+            {expanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+          </span>
+        )}
+      </button>
+      {expanded && sub.specs && (
+        <div className={styles.specTableWrap}>
+          <table className={styles.specTable}>
+            <thead>
+              <tr>
+                <th>Particular</th>
+                <th>Specifications</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sub.specs.map((row, i) => (
+                <tr key={i}>
+                  <td>{row.Particular}</td>
+                  <td>{row.Specifications}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default function ProductDetail() {
@@ -60,6 +106,28 @@ export default function ProductDetail() {
           <div className={styles.infoSection}>
             <h2 className={styles.aboutTitle}>About This Product</h2>
             <p className={styles.description}>{product.description}</p>
+
+            {product.specs && product.specs.length > 0 && (
+              <div className={styles.mainSpecSection}>
+                <h3 className={styles.specSectionTitle}>Specifications</h3>
+                <table className={styles.specTable}>
+                  <thead>
+                    <tr>
+                      <th>Particular</th>
+                      <th>Specifications</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {product.specs.map((row, i) => (
+                      <tr key={i}>
+                        <td>{row.Particular}</td>
+                        <td>{row.Specifications}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
         </div>
 
@@ -70,10 +138,7 @@ export default function ProductDetail() {
             </h2>
             <div className={styles.subProductsGrid}>
               {product.subProducts.map((sub, i) => (
-                <div key={i} className={styles.subProductCard}>
-                  <span className={styles.subProductNumber}>{i + 1}</span>
-                  <span className={styles.subProductName}>{sub}</span>
-                </div>
+                <SubProductCard key={i} sub={sub} index={i} />
               ))}
             </div>
           </div>
