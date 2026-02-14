@@ -1,28 +1,29 @@
 .sidebar {
-  width: 280px;
-  min-width: 280px;
-  background-color: var(--color-neutral-1);
-  border-right: var(--border-size-1) solid var(--color-neutral-6);
+  width: 270px;
+  min-width: 270px;
+  background-color: light-dark(#f1f5f9, #1e293b);
   height: calc(100vh - 80px);
   position: sticky;
   top: 80px;
   overflow-y: auto;
-  padding: var(--space-4) 0;
+  padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: light-dark(#94a3b8, #475569) transparent;
 }
 
 .sidebarTitle {
   font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.15em;
   color: var(--color-brand-9);
-  padding: var(--space-2) var(--space-4);
-  margin-bottom: var(--space-2);
+  padding: var(--space-5) var(--space-4) var(--space-3);
 }
 
 .categoryItem {
   display: block;
+  border-bottom: 1px solid light-dark(#cbd5e1, #334155);
 }
 
 .categoryButton {
@@ -30,39 +31,44 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-3) var(--space-4);
   font-family: var(--font-body);
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--color-neutral-11);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: light-dark(#334155, #cbd5e1);
   background: none;
   border: none;
   cursor: pointer;
   text-align: left;
-  transition: all 0.15s;
+  transition: all 0.2s;
   text-decoration: none;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .categoryButton:hover {
-  background-color: var(--color-neutral-3);
-  color: var(--color-brand-11);
+  background-color: light-dark(#e2e8f0, #334155);
+  color: light-dark(#0f172a, #f1f5f9);
 }
 
 .categoryButtonActive {
-  background-color: var(--color-brand-3);
-  color: var(--color-brand-11);
-  border-left: 3px solid var(--color-brand-9);
+  background-color: var(--color-brand-9);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.categoryButtonActive:hover {
+  background-color: var(--color-brand-10);
 }
 
 .chevronIcon {
   flex-shrink: 0;
-  transition: transform 0.2s;
-  color: var(--color-neutral-8);
+  transition: transform 0.25s ease;
+  color: light-dark(#94a3b8, #64748b);
 }
 
 .chevronIconOpen {
   transform: rotate(90deg);
+  color: var(--color-brand-9);
 }
 
 .subList {
@@ -70,6 +76,7 @@
   padding: 0;
   margin: 0;
   overflow: hidden;
+  background-color: light-dark(#e2e8f0, #0f172a);
 }
 
 .subItem {
@@ -78,10 +85,10 @@
 
 .subLink {
   display: block;
-  padding: var(--space-1) var(--space-4) var(--space-1) var(--space-6);
+  padding: var(--space-2) var(--space-4) var(--space-2) var(--space-6);
   font-family: var(--font-body);
-  font-size: 0.82rem;
-  color: var(--color-neutral-10);
+  font-size: 0.8rem;
+  color: light-dark(#475569, #94a3b8);
   text-decoration: none;
   transition: all 0.15s;
   line-height: 1.5;
@@ -89,13 +96,14 @@
 }
 
 .subLink:hover {
-  background-color: var(--color-neutral-3);
-  color: var(--color-brand-11);
+  background-color: light-dark(#cbd5e1, #1e293b);
+  color: light-dark(#0f172a, #f1f5f9);
+  border-left-color: var(--color-brand-9);
 }
 
 .subLinkActive {
-  background-color: var(--color-brand-2);
-  color: var(--color-brand-11);
+  background-color: var(--color-brand-9);
+  color: #ffffff;
   font-weight: 600;
   border-left-color: var(--color-brand-9);
 }
@@ -107,9 +115,9 @@
   left: var(--space-4);
   z-index: 50;
   background-color: var(--color-brand-9);
-  color: var(--color-brand-1);
+  color: #ffffff;
   border: none;
-  border-radius: 50%;
+  border-radius: var(--radius-3);
   width: 48px;
   height: 48px;
   cursor: pointer;
@@ -130,7 +138,7 @@
     height: 100vh;
     z-index: 100;
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: var(--shadow-4);
   }
 
@@ -146,7 +154,7 @@
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 99;
   }
 }
