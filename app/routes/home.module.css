@@ -72,6 +72,16 @@
   flex-wrap: wrap;
 }
 
+.heroButtons a[class*="outline"] {
+  color: var(--color-brand-1);
+  border-color: var(--color-brand-3);
+}
+
+.heroButtons a[class*="outline"]:hover {
+  background-color: light-dark(rgba(255,255,255,0.15), rgba(255,255,255,0.1));
+  color: var(--color-brand-1);
+}
+
 .section {
   padding: var(--space-9) var(--space-5);
   max-width: 1400px;
@@ -127,8 +137,10 @@
 
 .productImage {
   width: 100%;
-  height: 210px;
-  object-fit: cover;
+  height: 240px;
+  object-fit: contain;
+  background-color: var(--color-neutral-2);
+  padding: var(--space-3);
 }
 
 .productContent {
