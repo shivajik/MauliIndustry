@@ -86,6 +86,43 @@
   color: var(--color-neutral-11);
 }
 
+.mainSpecSection {
+  margin-top: var(--space-5);
+}
+
+.specSectionTitle {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-brand-11);
+  margin-bottom: var(--space-3);
+}
+
+.specTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.specTable th {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-brand-9);
+  color: var(--color-brand-1);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.specTable td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--border-size-1) solid var(--color-neutral-5);
+  color: var(--color-neutral-12);
+}
+
+.specTable tr:nth-child(even) td {
+  background-color: var(--color-neutral-2);
+}
+
 .subProductsSection {
   border-top: var(--border-size-1) solid var(--color-neutral-6);
   padding-top: var(--space-7);
@@ -102,24 +139,39 @@
 
 .subProductsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   gap: var(--space-4);
 }
 
 .subProductCard {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
   background-color: var(--color-neutral-1);
   border: var(--border-size-1) solid var(--color-neutral-6);
   border-radius: var(--radius-3);
-  padding: var(--space-4);
+  overflow: hidden;
   transition: all 0.2s;
 }
 
 .subProductCard:hover {
   border-color: var(--color-brand-7);
   box-shadow: var(--shadow-2);
+}
+
+.subProductCardExpanded {
+  border-color: var(--color-brand-7);
+}
+
+.subProductHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  font: inherit;
 }
 
 .subProductNumber {
@@ -134,13 +186,39 @@
   font-weight: 700;
   font-size: 0.85rem;
   flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.subProductInfo {
+  flex: 1;
+  min-width: 0;
 }
 
 .subProductName {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--color-neutral-12);
-  font-weight: 500;
+  font-weight: 600;
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.subProductDesc {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-neutral-10);
+  margin: 0;
+}
+
+.expandIcon {
+  flex-shrink: 0;
+  color: var(--color-brand-9);
+  margin-top: 4px;
+}
+
+.specTableWrap {
+  padding: 0 var(--space-4) var(--space-4);
 }
 
 .notFound {
