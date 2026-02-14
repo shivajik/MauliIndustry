@@ -149,29 +149,18 @@
   border-radius: var(--radius-3);
   overflow: hidden;
   transition: all 0.2s;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  text-decoration: none;
+  color: inherit;
 }
 
 .subProductCard:hover {
   border-color: var(--color-brand-7);
   box-shadow: var(--shadow-2);
-}
-
-.subProductCardExpanded {
-  border-color: var(--color-brand-7);
-}
-
-.subProductHeader {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-  padding: var(--space-4);
-  width: 100%;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  color: inherit;
-  font: inherit;
+  transform: translateY(-2px);
 }
 
 .subProductNumber {
@@ -209,16 +198,16 @@
   line-height: 1.5;
   color: var(--color-neutral-10);
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .expandIcon {
   flex-shrink: 0;
   color: var(--color-brand-9);
   margin-top: 4px;
-}
-
-.specTableWrap {
-  padding: 0 var(--space-4) var(--space-4);
 }
 
 .notFound {

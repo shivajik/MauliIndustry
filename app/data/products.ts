@@ -1,4 +1,5 @@
 export interface SubProduct {
+  id: string;
   name: string;
   description: string;
   specs?: Record<string, string>[];
@@ -33,6 +34,7 @@ export const productCategories: ProductCategory[] = [
     ],
     subProducts: [
       {
+        id: "billet-bloom",
         name: "Shearing Blades - Billet and Bloom",
         description:
           "Mauli Shear blades is ultimate solution to the customer need. Our customised solutions w.r.t design and product specification keep us ahead in the field. The selection of proper chemical composition to owe the application need yields optimal combination of properties like hardness, toughness endurance with sustainable product life. For better shearing experience and considering the better life of blade, the blades are heat treated with digitalised heat treatment process. Mauli Hot Shear blades can withstand up to 1000⁰C temperature for shearing of various thickness.",
@@ -49,6 +51,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "cold-shear",
         name: "Cold Shear Blades",
         description:
           "The top-notch design, development and research enable us to offer the wide range of solution in terms of shearing for different products like sheet metals, angles, channels etc. We offer onsite solution for the Standard or non-standard machines. Our team of experts provides customised solution for performance improvement, if required. We can offer Mauli Cold Shear blades up to 3000-4000 mm with different steel grades as per application.",
@@ -64,6 +67,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "end-length",
         name: "End Length Shear Blades",
         description:
           "The top-notch design, development and research enable us to offer the wide range of solution in terms of shearing for different products like sheet metals, angles, channels etc. We offer onsite solution for the Standard or non-standard machines. Our team of experts provides customised solution for performance improvement, if required.",
@@ -79,6 +83,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "scrap-shear",
         name: "Scrap Shear Blades",
         description:
           "Mauli Shear blades is ultimate solution to the customer need. Our customised solutions w.r.t design and product specification keep us ahead in the field. The selection of proper chemical composition to owe the application need yields optimal combination of properties like hardness, toughness endurance with sustainable product life.",
@@ -95,6 +100,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "bar-wire-rod",
         name: "Bar/Wire Rod Shear Blades",
         description:
           "Mauli Shear blades is ultimate solution to the customer need. Our customised solutions w.r.t design and product specification keep us ahead in the field. The selection of proper chemical composition to owe the application need yields optimal combination of properties like hardness, toughness endurance with sustainable product life. For better shearing experience and considering the better life of blade, the blades are heat treated with digitalised heat treatment process.",
@@ -111,50 +117,77 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "rotary-shear",
         name: "Rotary Shear Blade",
         description: "High-performance rotary shear blades for continuous cutting operations. Heat treated with digitalised process for better life and performance.",
       },
       {
+        id: "flying-shear",
         name: "Flying Shear Blade",
         description: "Precision flying shear blades designed for high-speed cutting in rolling mills. Customised designs available.",
       },
       {
+        id: "continuous-shear",
         name: "Continuous Shear Blade",
         description: "Blades designed for continuous shearing operations in rolling mills with sustained durability and performance.",
       },
       {
+        id: "dividing-shear",
         name: "Dividing Shear Blade",
         description: "Specialized dividing shear blades for precision cutting of billets and blooms in steel plants.",
       },
       {
+        id: "crank-shear",
         name: "Crank Shear Blade",
         description: "Heavy-duty crank shear blades engineered for reliable and consistent shearing operations.",
       },
       {
+        id: "hot-shear",
+        name: "Hot Shear Blade",
+        description: "Hot shear blades designed for high-temperature shearing operations in rolling mills and steel plants. Heat treated with digitalised process for optimal performance.",
+      },
+      {
+        id: "ccm-shear",
         name: "CCM Shear Blade",
         description: "CCM shear blades designed for continuous casting machine applications with high temperature resistance.",
       },
       {
+        id: "coble-shear",
+        name: "Coble Shear Blade",
+        description: "Coble shear blades for specialized shearing applications in rolling mills, manufactured with precision and durability.",
+      },
+      {
+        id: "angular-shear",
         name: "Angular Shear Blade",
         description: "Angular shear blades for angled cutting operations, available in customised designs and specifications.",
       },
       {
+        id: "lubes-scanner",
+        name: "Lubes Scanner Shear Blade",
+        description: "Lubes scanner shear blades for specialized scanning and shearing applications in steel plants.",
+      },
+      {
+        id: "chopping-shear",
         name: "Chopping Shear Blade",
         description: "Chopping shear blades for scrap and billet chopping applications in rolling mills.",
       },
       {
+        id: "snap-shear",
         name: "Snap Shear Blade",
         description: "Snap shear blades for quick-action cutting operations in steel plants and rolling mills.",
       },
       {
+        id: "box-shear",
         name: "Box Shear Blade",
         description: "Box type shear blades for heavy-duty shearing applications in steel rolling mills.",
       },
       {
+        id: "pprm",
         name: "PPRM Blade",
         description: "PPRM blades for specialized rolling mill applications with precision machining and hardening.",
       },
       {
+        id: "alligator-shear",
         name: "Alligator Shear Blade",
         description: "Alligator shear blades for scrap cutting and recycling operations, built for durability.",
       },
@@ -209,6 +242,7 @@ export const productCategories: ProductCategory[] = [
     ],
     subProducts: [
       {
+        id: "roller-entry-guide-box",
         name: "Roller Entry Guide Box",
         description:
           "Guide box for roller is an integral part in rolling operation for rolling and twisting the stock in the adjacent set of rollers. Mauli Roller guide box gives you the credibility to attain the quality standard, durability and advances the smooth working operation. We are the market leader in providing sustainable and heavy-duty roller guide box and twisting pipe in the segment.",
@@ -228,6 +262,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "roller-mill-entry-guide",
         name: "Roller Mill Entry Guide",
         description:
           "Precision roller mill entry guides designed for smooth stock entry into the rolling mill stands. Built for durability and consistent performance in rolling operations.",
@@ -242,6 +277,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "roller-guide-boxes-without-holder",
         name: "Roller Guide Boxes Without Holder",
         description:
           "Standalone roller guide boxes without holder for flexible integration into various rolling mill configurations. Customized designs available.",
@@ -254,6 +290,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "entry-guiding-roller-boxes",
         name: "Entry Guiding Roller Boxes",
         description:
           "Entry guiding roller boxes for precise material guidance into rolling mill stands, ensuring quality output and smooth operation.",
@@ -266,6 +303,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "ss-body-roller-guide-box",
         name: "SS Body Roller Guide Box",
         description:
           "Stainless steel body roller guide boxes offering superior corrosion resistance and extended service life in demanding rolling mill environments.",
@@ -278,6 +316,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "industrial-roller-guide-box",
         name: "Industrial Roller Guide Box",
         description:
           "Heavy-duty industrial roller guide boxes built for high-volume rolling operations with maximum uptime and reliability.",
@@ -290,6 +329,21 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "stainless-steel-roller-guide-box",
+        name: "Stainless Steel Roller Guide Box",
+        description:
+          "Premium stainless steel roller guide boxes for applications requiring maximum corrosion resistance and longevity. Ideal for demanding rolling mill environments with exposure to heat and moisture.",
+        specs: [
+          { Particular: "Brand", Specifications: "Mauli" },
+          { Particular: "Category", Specifications: "Roller Guide Box" },
+          { Particular: "MOC", Specifications: "Stainless Steel" },
+          { Particular: "Application", Specifications: "Rolling Operation" },
+          { Particular: "Variety", Specifications: "Customised" },
+          { Particular: "Supply", Specifications: "PAN India" },
+        ],
+      },
+      {
+        id: "roller-guide-box-reel",
         name: "Roller Guide Box Reel",
         description:
           "We provide all types of guide box reel as per requirement. We have specially designed reels for sustaining the wear and tear conditions, mostly durable and well suited to all your need.",
@@ -308,6 +362,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "ci-guides",
         name: "CI Guides",
         description:
           "We provide different set of CI guides to fulfil the client needs.",
@@ -389,6 +444,7 @@ export const productCategories: ProductCategory[] = [
     imageUrl: "/images/products/gear.jpg",
     subProducts: [
       {
+        id: "worm-and-worm-wheel",
         name: "Worm and Worm Wheel",
         description:
           "Mauli Industries is the leading worm gear manufacturer, supplier and exporter in India. We are firm in offering the best quality worm gears all throughout India as well as many other countries spread across the world. We never compromise in the quality aspect of worm gears. We provide fully furnished products that are fabricated from top graded raw materials. Worm gears are highly utilized in the manufacturing and packaging industries. They are used in packing equipment, conveying applications and small machineries. We never compromise in the product quality. We've made stringent supervisions during the construction of superior grade worm gear. Worm gears are highly recommended due to their high tensile strength and great workability features.",
@@ -399,6 +455,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "spiral-bevel-gear",
         name: "Spiral Bevel Gear",
         description:
           "We are the leading Bevel gear manufacturer, opted all kind of bevel gears such as Ground Spiral Bevel Gear, Hard Cut Spiral Bevel Gear, Lapped Spiral Bevel Gear, Ground Straight Bevel Gear, Straight Bevel Gear, Hypoid Gear, Angular Bevel Gear, zero Bevel gear.",
@@ -408,6 +465,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "straight-bevel-gear",
         name: "Straight Bevel Gear",
         description:
           "High-quality straight bevel gears with precision manufacturing for smooth power transmission in industrial applications.",
@@ -417,6 +475,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "helical-gears-hob-finish",
         name: "Helical Gears - Hob Finish",
         description:
           "Our wide range and versatility to provide customized solution to your need. Hob finished helical gears for smooth and efficient operation.",
@@ -426,6 +485,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "helical-gears-hardened-ground",
         name: "Helical Gears - Hardened & Precision Ground",
         description:
           "Hardened and precision ground helical gears for demanding applications requiring high accuracy and durability.",
@@ -435,6 +495,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "spur-gear-hob-finish",
         name: "Spur Gear - Hob Finish",
         description:
           "Our wide range and versatility to provide customized solutions to your need. Available in various modules and diameters.",
@@ -444,6 +505,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "spur-gears-hardened-ground",
         name: "Spur Gears - Hardened & Precision Ground",
         description:
           "Hardened and precision ground spur gears for high-performance applications requiring superior surface finish.",
@@ -453,6 +515,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "spur-gears-shaped-external",
         name: "Spur Gears - Shaped (External)",
         description:
           "Externally shaped spur gears manufactured with precision for reliable power transmission in various industrial setups.",
@@ -462,6 +525,7 @@ export const productCategories: ProductCategory[] = [
         ],
       },
       {
+        id: "spur-gears-shaped-internal",
         name: "Spur Gears - Shaped (Internal)",
         description:
           "Internally shaped spur gears for specialized applications requiring internal gear configurations.",

@@ -1,9 +1,8 @@
-import { useState } from "react";
-import { useParams, Link } from "react-router";
+import { Link, useParams } from "react-router";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
-import { productCategories, type SubProduct } from "~/data/products";
-import { ArrowLeft, ChevronDown, ChevronUp } from "lucide-react";
+import { productCategories } from "~/data/products";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import styles from "./product-detail.module.css";
 
 export function meta({ params }: { params: { id: string } }) {
@@ -15,51 +14,6 @@ export function meta({ params }: { params: { id: string } }) {
       content: product?.description || "Product details from Mauli Industries",
     },
   ];
-}
-
-function SubProductCard({ sub, index }: { sub: SubProduct; index: number }) {
-  const [expanded, setExpanded] = useState(false);
-
-  return (
-    <div className={`${styles.subProductCard} ${expanded ? styles.subProductCardExpanded : ""}`}>
-      <button
-        className={styles.subProductHeader}
-        onClick={() => sub.specs && sub.specs.length > 0 && setExpanded(!expanded)}
-        type="button"
-      >
-        <span className={styles.subProductNumber}>{index + 1}</span>
-        <div className={styles.subProductInfo}>
-          <span className={styles.subProductName}>{sub.name}</span>
-          <p className={styles.subProductDesc}>{sub.description}</p>
-        </div>
-        {sub.specs && sub.specs.length > 0 && (
-          <span className={styles.expandIcon}>
-            {expanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-          </span>
-        )}
-      </button>
-      {expanded && sub.specs && (
-        <div className={styles.specTableWrap}>
-          <table className={styles.specTable}>
-            <thead>
-              <tr>
-                <th>Particular</th>
-                <th>Specifications</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sub.specs.map((row, i) => (
-                <tr key={i}>
-                  <td>{row.Particular}</td>
-                  <td>{row.Specifications}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-    </div>
-  );
 }
 
 export default function ProductDetail() {
@@ -138,7 +92,20 @@ export default function ProductDetail() {
             </h2>
             <div className={styles.subProductsGrid}>
               {product.subProducts.map((sub, i) => (
-                <SubProductCard key={i} sub={sub} index={i} />
+                <Link
+                  key={sub.id}
+                  to={`/products/${product.id}/${sub.id}`}
+                  className={styles.subProductCard}
+                >
+                  <span className={styles.subProductNumber}>{i + 1}</span>
+                  <div className={styles.subProductInfo}>
+                    <span className={styles.subProductName}>{sub.name}</span>
+                    <p className={styles.subProductDesc}>{sub.description}</p>
+                  </div>
+                  <span className={styles.expandIcon}>
+                    <ArrowRight size={20} />
+                  </span>
+                </Link>
               ))}
             </div>
           </div>
