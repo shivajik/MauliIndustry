@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
+import { ProductSidebar } from "~/components/product-sidebar/product-sidebar";
 import { productCategories } from "~/data/products";
 import { ArrowLeft } from "lucide-react";
 import styles from "./sub-product-detail.module.css";
@@ -42,47 +43,53 @@ export default function SubProductDetail() {
     <div className={styles.container}>
       <Header />
 
-      <section className={styles.hero}>
-        <Link to={`/products/${product.id}`} className={styles.backLink}>
-          <ArrowLeft size={18} /> Back to {product.name}
-        </Link>
-        <h1 className={styles.heroTitle}>{sub.name}</h1>
-      </section>
+      <div className={styles.pageLayout}>
+        <ProductSidebar />
 
-      <section className={styles.content}>
-        <div className={styles.descriptionSection}>
-          <h2 className={styles.sectionTitle}>About This Product</h2>
-          <p className={styles.description}>{sub.description}</p>
+        <div className={styles.mainContent}>
+          <section className={styles.hero}>
+            <Link to={`/products/${product.id}`} className={styles.backLink}>
+              <ArrowLeft size={18} /> Back to {product.name}
+            </Link>
+            <h1 className={styles.heroTitle}>{sub.name}</h1>
+          </section>
+
+          <section className={styles.content}>
+            <div className={styles.descriptionSection}>
+              <h2 className={styles.sectionTitle}>About This Product</h2>
+              <p className={styles.description}>{sub.description}</p>
+            </div>
+
+            {sub.specs && sub.specs.length > 0 && (
+              <div className={styles.specSection}>
+                <h3 className={styles.sectionTitle}>Specifications</h3>
+                <table className={styles.specTable}>
+                  <thead>
+                    <tr>
+                      <th>Particular</th>
+                      <th>Specifications</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sub.specs.map((row, i) => (
+                      <tr key={i}>
+                        <td>{row.Particular}</td>
+                        <td>{row.Specifications}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
+            <div className={styles.ctaSection}>
+              <Link to="/contact" className={styles.ctaButton}>
+                Get a Quote for {sub.name}
+              </Link>
+            </div>
+          </section>
         </div>
-
-        {sub.specs && sub.specs.length > 0 && (
-          <div className={styles.specSection}>
-            <h3 className={styles.sectionTitle}>Specifications</h3>
-            <table className={styles.specTable}>
-              <thead>
-                <tr>
-                  <th>Particular</th>
-                  <th>Specifications</th>
-                </tr>
-              </thead>
-              <tbody>
-                {sub.specs.map((row, i) => (
-                  <tr key={i}>
-                    <td>{row.Particular}</td>
-                    <td>{row.Specifications}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
-
-        <div className={styles.ctaSection}>
-          <Link to="/contact" className={styles.ctaButton}>
-            Get a Quote for {sub.name}
-          </Link>
-        </div>
-      </section>
+      </div>
 
       <Footer />
     </div>

@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router";
 import { Header } from "~/components/header/header";
 import { Footer } from "~/components/footer/footer";
+import { ProductSidebar } from "~/components/product-sidebar/product-sidebar";
 import { productCategories } from "~/data/products";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import styles from "./product-detail.module.css";
@@ -40,77 +41,83 @@ export default function ProductDetail() {
     <div className={styles.container}>
       <Header />
 
-      <section className={styles.hero}>
-        <Link to="/products" className={styles.backLink}>
-          <ArrowLeft size={18} /> Back to Products
-        </Link>
-        <h1 className={styles.heroTitle}>{product.name}</h1>
-      </section>
+      <div className={styles.pageLayout}>
+        <ProductSidebar />
 
-      <section className={styles.content}>
-        <div className={styles.productLayout}>
-          <div className={styles.imageSection}>
-            <img
-              src={product.imageUrl}
-              alt={product.name}
-              className={styles.productImage}
-            />
-          </div>
+        <div className={styles.mainContent}>
+          <section className={styles.hero}>
+            <Link to="/products" className={styles.backLink}>
+              <ArrowLeft size={18} /> Back to Products
+            </Link>
+            <h1 className={styles.heroTitle}>{product.name}</h1>
+          </section>
 
-          <div className={styles.infoSection}>
-            <h2 className={styles.aboutTitle}>About This Product</h2>
-            <p className={styles.description}>{product.description}</p>
+          <section className={styles.content}>
+            <div className={styles.productLayout}>
+              <div className={styles.imageSection}>
+                <img
+                  src={product.imageUrl}
+                  alt={product.name}
+                  className={styles.productImage}
+                />
+              </div>
 
-            {product.specs && product.specs.length > 0 && (
-              <div className={styles.mainSpecSection}>
-                <h3 className={styles.specSectionTitle}>Specifications</h3>
-                <table className={styles.specTable}>
-                  <thead>
-                    <tr>
-                      <th>Particular</th>
-                      <th>Specifications</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {product.specs.map((row, i) => (
-                      <tr key={i}>
-                        <td>{row.Particular}</td>
-                        <td>{row.Specifications}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className={styles.infoSection}>
+                <h2 className={styles.aboutTitle}>About This Product</h2>
+                <p className={styles.description}>{product.description}</p>
+
+                {product.specs && product.specs.length > 0 && (
+                  <div className={styles.mainSpecSection}>
+                    <h3 className={styles.specSectionTitle}>Specifications</h3>
+                    <table className={styles.specTable}>
+                      <thead>
+                        <tr>
+                          <th>Particular</th>
+                          <th>Specifications</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {product.specs.map((row, i) => (
+                          <tr key={i}>
+                            <td>{row.Particular}</td>
+                            <td>{row.Specifications}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {product.subProducts && product.subProducts.length > 0 && (
+              <div className={styles.subProductsSection}>
+                <h2 className={styles.subProductsTitle}>
+                  Product Range & Variants
+                </h2>
+                <div className={styles.subProductsGrid}>
+                  {product.subProducts.map((sub, i) => (
+                    <Link
+                      key={sub.id}
+                      to={`/products/${product.id}/${sub.id}`}
+                      className={styles.subProductCard}
+                    >
+                      <span className={styles.subProductNumber}>{i + 1}</span>
+                      <div className={styles.subProductInfo}>
+                        <span className={styles.subProductName}>{sub.name}</span>
+                        <p className={styles.subProductDesc}>{sub.description}</p>
+                      </div>
+                      <span className={styles.expandIcon}>
+                        <ArrowRight size={20} />
+                      </span>
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
-          </div>
+          </section>
         </div>
-
-        {product.subProducts && product.subProducts.length > 0 && (
-          <div className={styles.subProductsSection}>
-            <h2 className={styles.subProductsTitle}>
-              Product Range & Variants
-            </h2>
-            <div className={styles.subProductsGrid}>
-              {product.subProducts.map((sub, i) => (
-                <Link
-                  key={sub.id}
-                  to={`/products/${product.id}/${sub.id}`}
-                  className={styles.subProductCard}
-                >
-                  <span className={styles.subProductNumber}>{i + 1}</span>
-                  <div className={styles.subProductInfo}>
-                    <span className={styles.subProductName}>{sub.name}</span>
-                    <p className={styles.subProductDesc}>{sub.description}</p>
-                  </div>
-                  <span className={styles.expandIcon}>
-                    <ArrowRight size={20} />
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-      </section>
+      </div>
 
       <Footer />
     </div>

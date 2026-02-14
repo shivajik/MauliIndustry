@@ -4,6 +4,17 @@
   flex-direction: column;
 }
 
+.pageLayout {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.mainContent {
+  flex: 1;
+  min-width: 0;
+}
+
 .hero {
   background: linear-gradient(135deg, var(--color-brand-11) 0%, var(--color-brand-9) 100%);
   color: var(--color-brand-1);
