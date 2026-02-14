@@ -18,7 +18,7 @@ export const productCategories: ProductCategory[] = [
     id: "shearing-blades",
     name: "Shearing Blades for Rolling Mill and Steel Plants",
     description:
-      "Mauli Industries is the leader in Manufacturing of Shearing Blades, supplying across Pan India for two decades. Our customised solutions w.r.t design and product specification keep us ahead. Blades are heat treated with digitalised heat treatment process for better life and performance.",
+      "Mauli Industries is the leader in the sector of Manufacturing of Shearing Blades. We are manufacturing and supplying the shearing blades in Pan India for different applications from two decades. The customer family is getting bigger and bigger and we are happy to share that we have retained the giant rolling mills customers till now and accommodating the new ones with an open arm. Their satisfaction is our key inspiration to develop more reliable and sustainable shearing blades.",
     imageUrl: "/images/products/shearing-blades.jpg",
     specs: [
       { Particular: "Brand", Specifications: "Mauli" },
@@ -34,49 +34,80 @@ export const productCategories: ProductCategory[] = [
     subProducts: [
       {
         name: "Shearing Blades - Billet and Bloom",
-        description: "Mauli Shear blades is ultimate solution to the customer need. Our customised solutions w.r.t design and product specification keep us ahead. The selection of proper chemical composition yields optimal combination of hardness, toughness and sustainable product life.",
+        description:
+          "Mauli Shear blades is ultimate solution to the customer need. Our customised solutions w.r.t design and product specification keep us ahead in the field. The selection of proper chemical composition to owe the application need yields optimal combination of properties like hardness, toughness endurance with sustainable product life. For better shearing experience and considering the better life of blade, the blades are heat treated with digitalised heat treatment process. Mauli Hot Shear blades can withstand up to 1000⁰C temperature for shearing of various thickness.",
         specs: [
           { Particular: "Brand", Specifications: "Mauli" },
           { Particular: "Category", Specifications: "Shear Blade" },
           { Particular: "MOC", Specifications: "STD Alloy Tool Steel" },
+          { Particular: "Shape", Specifications: "Rectangular" },
           { Particular: "Application", Specifications: "Hot Shearing Operations" },
           { Particular: "Variety", Specifications: "Customised" },
           { Particular: "Salient Feature", Specifications: "Precise Machined, Hardened, Certified" },
+          { Particular: "Packaging Type", Specifications: "Wooden" },
+          { Particular: "Supply", Specifications: "PAN India" },
         ],
       },
       {
         name: "Cold Shear Blades",
-        description: "The top-notch design, development and research enable us to offer the wide range of solution in terms of shearing for different products like sheet metals, angles, channels etc. We offer onsite solution for the Standard or non-standard machines.",
+        description:
+          "The top-notch design, development and research enable us to offer the wide range of solution in terms of shearing for different products like sheet metals, angles, channels etc. We offer onsite solution for the Standard or non-standard machines. Our team of experts provides customised solution for performance improvement, if required. We can offer Mauli Cold Shear blades up to 3000-4000 mm with different steel grades as per application.",
         specs: [
           { Particular: "Brand", Specifications: "Mauli" },
           { Particular: "Category", Specifications: "Shearing Blades-Cold" },
           { Particular: "Material", Specifications: "STD-Alloy Steel" },
           { Particular: "Application", Specifications: "Cold Shearing Operation" },
           { Particular: "Variety", Specifications: "Rectangular" },
+          { Particular: "Finishing", Specifications: "STD" },
           { Particular: "Salient Features", Specifications: "Precise Machined, Hardened, Certified" },
+          { Particular: "Supply", Specifications: "PAN India" },
         ],
       },
       {
         name: "End Length Shear Blades",
-        description: "The top-notch design, development and research enable us to offer the wide range of solution in terms of shearing for different products like sheet metals, angles, channels etc.",
+        description:
+          "The top-notch design, development and research enable us to offer the wide range of solution in terms of shearing for different products like sheet metals, angles, channels etc. We offer onsite solution for the Standard or non-standard machines. Our team of experts provides customised solution for performance improvement, if required.",
         specs: [
           { Particular: "Brand", Specifications: "Mauli" },
+          { Particular: "Category", Specifications: "Shearing Blades-Cold" },
           { Particular: "Material", Specifications: "STD-Alloy Steel" },
           { Particular: "Application", Specifications: "Cold Shearing Operation" },
+          { Particular: "Variety", Specifications: "Rectangular" },
+          { Particular: "Finishing", Specifications: "STD" },
           { Particular: "Salient Features", Specifications: "Precise Machined, Hardened, Certified" },
+          { Particular: "Supply", Specifications: "PAN India" },
         ],
       },
       {
         name: "Scrap Shear Blades",
-        description: "Mauli Shear blades is ultimate solution to the customer need. Our customised solutions w.r.t design and product specification keep us ahead in the field.",
+        description:
+          "Mauli Shear blades is ultimate solution to the customer need. Our customised solutions w.r.t design and product specification keep us ahead in the field. The selection of proper chemical composition to owe the application need yields optimal combination of properties like hardness, toughness endurance with sustainable product life.",
+        specs: [
+          { Particular: "Brand", Specifications: "Mauli" },
+          { Particular: "Category", Specifications: "Shear Blade" },
+          { Particular: "MOC", Specifications: "STD Alloy Tool Steel" },
+          { Particular: "Shape", Specifications: "Rectangular" },
+          { Particular: "Application", Specifications: "Hot and Cold Shearing Operations" },
+          { Particular: "Variety", Specifications: "Customised" },
+          { Particular: "Salient Feature", Specifications: "Precise Machined, Hardened, Certified" },
+          { Particular: "Packaging Type", Specifications: "Wooden" },
+          { Particular: "Supply", Specifications: "PAN India" },
+        ],
       },
       {
         name: "Bar/Wire Rod Shear Blades",
-        description: "Our customised solutions w.r.t design and product specification keep us ahead. The selection of proper chemical composition yields optimal combination of hardness, toughness and sustainable product life.",
+        description:
+          "Mauli Shear blades is ultimate solution to the customer need. Our customised solutions w.r.t design and product specification keep us ahead in the field. The selection of proper chemical composition to owe the application need yields optimal combination of properties like hardness, toughness endurance with sustainable product life. For better shearing experience and considering the better life of blade, the blades are heat treated with digitalised heat treatment process.",
         specs: [
           { Particular: "Brand", Specifications: "Mauli" },
+          { Particular: "Category", Specifications: "Shear Blade" },
           { Particular: "MOC", Specifications: "STD Alloy Tool Steel" },
           { Particular: "Shape", Specifications: "Rectangular" },
+          { Particular: "Application", Specifications: "Hot and Cold Shearing Operations" },
+          { Particular: "Variety", Specifications: "Customised" },
+          { Particular: "Salient Feature", Specifications: "Precise Machined, Hardened, Certified" },
+          { Particular: "Packaging Type", Specifications: "Wooden" },
+          { Particular: "Supply", Specifications: "PAN India" },
         ],
       },
       {
@@ -133,24 +164,26 @@ export const productCategories: ProductCategory[] = [
     id: "pinch-roll",
     name: "Pinch Roll and Tail Breaker",
     description:
-      "Mauli is pioneer in manufacturing spare parts and machineries for rolling mills since 20 years. We produce high-speed pinch rolls and tail breakers to produce consistent tension of the bar with innovative approach for best performance and durability.",
+      "Mauli is pioneer in the region of manufacturing the spare parts and machineries in rolling mills since last 20 years with happy and satisfactory customers. We have the innovative approach in product development for best performance and durability. We are expert in producing the high-speed pinch rolls and tail breaker to produce consistent tension of the bar.",
     imageUrl: "/images/products/pinch-roll.jpg",
   },
   {
     id: "mill-stands",
     name: "Mill Stands",
     description:
-      "We are leading manufacturer of complete set of mill stands for the rolling industry of ferrous and non-ferrous metals. Our mill stands feature precise machining, hardened components, spherical or gun bush bearings, and steel chocks housing.",
+      "We are leading manufacturer of complete set of mill stands for the rolling industry of ferrous and non-ferrous metals.",
     imageUrl: "/images/products/mill-stands.jpg",
     specs: [
       { Particular: "Brand", Specifications: "Mauli" },
       { Particular: "Category", Specifications: "Mill Stand" },
       { Particular: "MOC", Specifications: "MS or CI" },
+      { Particular: "Shape", Specifications: "Designed" },
       { Particular: "Application", Specifications: "Shearing Operations" },
       { Particular: "Variety", Specifications: "Customised" },
       { Particular: "Salient Feature", Specifications: "Precise Machined, Hardened, Certified" },
       { Particular: "Bearing", Specifications: "Spherical or Gun Bush" },
       { Particular: "Housing", Specifications: "Each Stands having Steel chocks" },
+      { Particular: "Packaging Type", Specifications: "Wooden" },
       { Particular: "Supply", Specifications: "PAN India" },
     ],
   },
@@ -158,73 +191,134 @@ export const productCategories: ProductCategory[] = [
     id: "gear-couplings",
     name: "Gear Couplings",
     description:
-      "Proper material selection, adequate design and precision manufacturing is the key to develop efficient gear couplings. Used for transmitting power from one shaft to another, handling radial and axial misalignment. We also provide Roller Guide Boxes, Twist Pipes, Roller Guide Box Reels and CI Guides.",
+      "Proper material selection, adequate design and precision manufacturing is the basic key to develop an efficient gear coupling. They are generally used for transmitting the power from one shaft to another. Our quality control measure makes us to stand distinct in the line. We are the leading supplier of gear coupling for different sizes and torque requirement.",
     imageUrl: "/images/products/gear-couplings.jpg",
     specs: [
       { Particular: "Brand", Specifications: "Mauli" },
       { Particular: "Category", Specifications: "Gear Coupling" },
       { Particular: "MOC", Specifications: "STD" },
+      { Particular: "Shape", Specifications: "Customized" },
+      { Particular: "Application", Specifications: "Shearing Operations" },
+      { Particular: "Variety", Specifications: "Customised" },
       { Particular: "Alignment", Specifications: "Able to handle radial and axial misalignment" },
+      { Particular: "Speed", Specifications: "Rated speed" },
+      { Particular: "Torque", Specifications: "Rated torque" },
       { Particular: "Torque Capacity", Specifications: "Can be used for high torque" },
+      { Particular: "Packaging Type", Specifications: "Wooden" },
       { Particular: "Supply", Specifications: "PAN India" },
     ],
     subProducts: [
       {
         name: "Roller Entry Guide Box",
-        description: "Guide box for roller is an integral part in rolling operation for rolling and twisting the stock in the adjacent set of rollers. Mauli Roller guide box gives you the credibility to attain the quality standard, durability and advances the smooth working operation.",
+        description:
+          "Guide box for roller is an integral part in rolling operation for rolling and twisting the stock in the adjacent set of rollers. Mauli Roller guide box gives you the credibility to attain the quality standard, durability and advances the smooth working operation. We are the market leader in providing sustainable and heavy-duty roller guide box and twisting pipe in the segment.",
         specs: [
           { Particular: "Brand", Specifications: "Mauli" },
           { Particular: "Category", Specifications: "Roller Guide Box and Twist Pipe" },
           { Particular: "MOC", Specifications: "STD" },
+          { Particular: "Shape", Specifications: "Customized" },
           { Particular: "Application", Specifications: "Shearing Operations" },
+          { Particular: "Variety", Specifications: "Customised" },
           { Particular: "Alignment", Specifications: "Able to handle radial and axial misalignment" },
+          { Particular: "Speed", Specifications: "Rated speed" },
+          { Particular: "Torque", Specifications: "Rated torque" },
+          { Particular: "Torque Capacity", Specifications: "Can be used for high torque" },
+          { Particular: "Packaging Type", Specifications: "Wooden" },
+          { Particular: "Supply", Specifications: "PAN India" },
         ],
       },
       {
         name: "Roller Mill Entry Guide",
-        description: "Precision roller mill entry guides designed for smooth stock entry into the rolling mill stands. Built for durability and consistent performance.",
+        description:
+          "Precision roller mill entry guides designed for smooth stock entry into the rolling mill stands. Built for durability and consistent performance in rolling operations.",
+        specs: [
+          { Particular: "Brand", Specifications: "Mauli" },
+          { Particular: "Category", Specifications: "Roller Guide Box and Twist Pipe" },
+          { Particular: "MOC", Specifications: "STD" },
+          { Particular: "Shape", Specifications: "Customized" },
+          { Particular: "Application", Specifications: "Shearing Operations" },
+          { Particular: "Variety", Specifications: "Customised" },
+          { Particular: "Supply", Specifications: "PAN India" },
+        ],
+      },
+      {
+        name: "Roller Guide Boxes Without Holder",
+        description:
+          "Standalone roller guide boxes without holder for flexible integration into various rolling mill configurations. Customized designs available.",
         specs: [
           { Particular: "Brand", Specifications: "Mauli" },
           { Particular: "Category", Specifications: "Roller Guide Box" },
           { Particular: "MOC", Specifications: "STD" },
           { Particular: "Application", Specifications: "Rolling Operation" },
+          { Particular: "Supply", Specifications: "PAN India" },
         ],
       },
       {
-        name: "Roller Guide Boxes Without Holder",
-        description: "Standalone roller guide boxes without holder for flexible integration into various rolling mill configurations.",
-      },
-      {
         name: "Entry Guiding Roller Boxes",
-        description: "Entry guiding roller boxes for precise material guidance into rolling mill stands, ensuring quality output.",
+        description:
+          "Entry guiding roller boxes for precise material guidance into rolling mill stands, ensuring quality output and smooth operation.",
+        specs: [
+          { Particular: "Brand", Specifications: "Mauli" },
+          { Particular: "Category", Specifications: "Roller Guide Box" },
+          { Particular: "MOC", Specifications: "STD" },
+          { Particular: "Application", Specifications: "Rolling Operation" },
+          { Particular: "Supply", Specifications: "PAN India" },
+        ],
       },
       {
         name: "SS Body Roller Guide Box",
-        description: "Stainless steel body roller guide boxes offering superior corrosion resistance and extended service life in demanding environments.",
+        description:
+          "Stainless steel body roller guide boxes offering superior corrosion resistance and extended service life in demanding rolling mill environments.",
+        specs: [
+          { Particular: "Brand", Specifications: "Mauli" },
+          { Particular: "Category", Specifications: "Roller Guide Box" },
+          { Particular: "MOC", Specifications: "Stainless Steel" },
+          { Particular: "Application", Specifications: "Rolling Operation" },
+          { Particular: "Supply", Specifications: "PAN India" },
+        ],
       },
       {
         name: "Industrial Roller Guide Box",
-        description: "Heavy-duty industrial roller guide boxes built for high-volume rolling operations with maximum uptime.",
+        description:
+          "Heavy-duty industrial roller guide boxes built for high-volume rolling operations with maximum uptime and reliability.",
+        specs: [
+          { Particular: "Brand", Specifications: "Mauli" },
+          { Particular: "Category", Specifications: "Roller Guide Box" },
+          { Particular: "MOC", Specifications: "STD" },
+          { Particular: "Application", Specifications: "Rolling Operation" },
+          { Particular: "Supply", Specifications: "PAN India" },
+        ],
       },
       {
         name: "Roller Guide Box Reel",
-        description: "We provide all types of guide box reel as per requirement. Specially designed reels for sustaining wear and tear conditions, durable and well suited to all your need.",
+        description:
+          "We provide all types of guide box reel as per requirement. We have specially designed reels for sustaining the wear and tear conditions, mostly durable and well suited to all your need.",
         specs: [
           { Particular: "Brand", Specifications: "Mauli" },
           { Particular: "Category", Specifications: "Roller Guide Box Reel" },
-          { Particular: "Hardness", Specifications: "55-60 HRC" },
+          { Particular: "MOC", Specifications: "STD" },
+          { Particular: "Shape", Specifications: "Customized" },
           { Particular: "Application", Specifications: "Roller Guide Box-Rolling Operation" },
+          { Particular: "Variety", Specifications: "Customised" },
+          { Particular: "Hardness", Specifications: "55-60 HRC" },
+          { Particular: "Speed", Specifications: "Rated speed" },
+          { Particular: "Torque", Specifications: "Rated torque" },
+          { Particular: "Packaging Type", Specifications: "Wooden" },
           { Particular: "Supply", Specifications: "PAN India" },
         ],
       },
       {
         name: "CI Guides",
-        description: "We provide different set of CI guides to fulfil the client needs. Cast iron guides for various rolling mill applications.",
+        description:
+          "We provide different set of CI guides to fulfil the client needs.",
         specs: [
           { Particular: "Brand", Specifications: "Mauli" },
           { Particular: "Category", Specifications: "CI Casting" },
           { Particular: "MOC", Specifications: "CI" },
+          { Particular: "Shape", Specifications: "Customized" },
           { Particular: "Application", Specifications: "Rolling Mill" },
+          { Particular: "Variety", Specifications: "Customised" },
+          { Particular: "Packaging Type", Specifications: "Wooden" },
           { Particular: "Supply", Specifications: "PAN India" },
         ],
       },
@@ -234,36 +328,38 @@ export const productCategories: ProductCategory[] = [
     id: "electro-hydraulic-grabber",
     name: "Electro Hydraulic Grabber",
     description:
-      "The electro-hydraulic grabber is an attachment for elevation equipment run on electric supply, suitable for handling scraps, industrial and municipal waste. Available in models from MI-SG-50 (5T lift) to MI-SG-250 (16T lift) with operating pressure up to 200 Bar.",
+      "The electro-hydraulic grabber is an attachment for different elevation equipment run on electric supply. It is suitable for handling the materials like scraps, industrial and municipal waste etc.",
     imageUrl: "/images/products/electro-hydraulic-grabber.jpg",
     specs: [
-      { Particular: "Model MI-SG-50", Specifications: "Max Lift 5T, Volume 0.5m³, Motor 15kW, Pressure 180 Bar, 5 Shells" },
-      { Particular: "Model MI-SG-100", Specifications: "Max Lift 8T, Volume 1m³, Motor 30kW, Pressure 200 Bar, 6 Shells" },
-      { Particular: "Model MI-SG-125", Specifications: "Max Lift 8T, Volume 1.25m³, Motor 30kW, Pressure 200 Bar, 6 Shells" },
-      { Particular: "Model MI-SG-150", Specifications: "Max Lift 10T, Volume 1.5m³, Motor 30kW, Pressure 200 Bar, 6 Shells" },
-      { Particular: "Model MI-SG-200", Specifications: "Max Lift 12.5T, Volume 2m³, Motor 37kW, Pressure 200 Bar, 6 Shells" },
-      { Particular: "Model MI-SG-250", Specifications: "Max Lift 16T, Volume 2.5m³, Motor 37kW, Pressure 200 Bar, 6 Shells" },
+      { Particular: "Model MI-SG-50", Specifications: "Max Lift: 5T, Volume: 0.5m³, Dead Wt: 2T, Motor: 15kW, Pressure: 180 Bar, Shells: 5" },
+      { Particular: "Model MI-SG-100", Specifications: "Max Lift: 8T, Volume: 1m³, Dead Wt: 3.2T, Motor: 30kW, Pressure: 200 Bar, Shells: 6" },
+      { Particular: "Model MI-SG-125", Specifications: "Max Lift: 8T, Volume: 1.25m³, Dead Wt: 3.4T, Motor: 30kW, Pressure: 200 Bar, Shells: 6" },
+      { Particular: "Model MI-SG-150", Specifications: "Max Lift: 10T, Volume: 1.5m³, Dead Wt: 3.8T, Motor: 30kW, Pressure: 200 Bar, Shells: 6" },
+      { Particular: "Model MI-SG-200", Specifications: "Max Lift: 12.5T, Volume: 2m³, Dead Wt: 5.4T, Motor: 37kW, Pressure: 200 Bar, Shells: 6" },
+      { Particular: "Model MI-SG-250", Specifications: "Max Lift: 16T, Volume: 2.5m³, Dead Wt: 5.6T, Motor: 37kW, Pressure: 200 Bar, Shells: 6" },
     ],
   },
   {
     id: "cold-shear-machine",
     name: "Cold Shear Machine",
     description:
-      "One of the most popular products of Mauli Industries. Our R&D experts and professional machinists deliver best-in-class machines for efficient operation, durability and long life.",
+      "Cold shear machine is one of the most popular products of Mauli Industries. Our R&D experts, professional machinist made us possible to deliver best in class machine to satisfy your need. Mauli Cold Shear Machine offers efficient operation, durability and long life.",
     imageUrl: "/images/products/cold-shear-machine.jpg",
   },
   {
     id: "bearing-chokes",
     name: "Bearing Chokes",
     description:
-      "To avoid resistive forces and ensure smooth rotational flow, bearing chocks (housing) are mounted on roll stands. Made from Steel Casting EN-8 and EN-9, we provide all kinds of bearing chocks for rolling mill applications.",
+      "To avoid the resistive forces and smooth rotational flow bearing is an integral part in rolling mill. And to house or hold the bearing in the dynamic atmosphere a housing is provided also called as rolling chock or bearing chock, mounted on roll stand. We provide all kinds of bearing chocks.",
     imageUrl: "/images/products/bearing-chokes.jpg",
     specs: [
       { Particular: "Brand", Specifications: "Mauli" },
       { Particular: "Category", Specifications: "Bearing Chock" },
-      { Particular: "MOC", Specifications: "Steel Casting EN-8, Steel Casting EN-9" },
+      { Particular: "MOC", Specifications: "Steel Casting EN-8, Steel Casting, EN-9" },
+      { Particular: "Shape", Specifications: "Customized" },
       { Particular: "Application", Specifications: "Rolling Mill" },
       { Particular: "Variety", Specifications: "Customised" },
+      { Particular: "Packaging Type", Specifications: "Wooden" },
       { Particular: "Supply", Specifications: "PAN India" },
     ],
   },
@@ -271,14 +367,17 @@ export const productCategories: ProductCategory[] = [
     id: "hydraulic-cylinders",
     name: "Hydraulic Cylinders",
     description:
-      "Leading manufacturer of giant hydraulic cylinders for furnace, scrap grabbing, pusher applications in rolling mills. Capacity from 15 to 40 Tonnes. We also provide power packs, seals, spare parts and services for overhauling, maintenance and modification.",
+      "We are leading manufacturer of giant hydraulic cylinders required for furnace, scrap grabbing, pusher etc application for rolling mills. We also provide power packs, seals and other spare parts as per your requirement. We provide services for overhauling, maintenance and modification if required.",
     imageUrl: "/images/products/hydraulic-cylinders.jpg",
     specs: [
       { Particular: "Brand", Specifications: "Mauli" },
       { Particular: "Category", Specifications: "Hydraulic Cylinders" },
       { Particular: "MOC", Specifications: "STD" },
+      { Particular: "Shape", Specifications: "Customized" },
       { Particular: "Application", Specifications: "Rolling Mill" },
+      { Particular: "Variety", Specifications: "Customised" },
       { Particular: "Capacity", Specifications: "15 to 40 Tonnes" },
+      { Particular: "Packaging Type", Specifications: "Wooden" },
       { Particular: "Supply", Specifications: "PAN India" },
     ],
   },
@@ -286,80 +385,89 @@ export const productCategories: ProductCategory[] = [
     id: "gear",
     name: "Gear",
     description:
-      "Mauli Industries provides all types of gears to make the motion smooth and trouble free. We manufacture Worm and Worm Wheel, Bevel Gear (Spiral & Straight), Helical Gear, and Spur Gear with modules up to 16mm and diameters up to 1600mm.",
+      "Mauli industries is devoted to be partner in propelling the success boat of your company wherein the gear is an integral part of any machine to give the required thrust. We, Mauli Industries is dedicated to provide you all types of gear and make the motion of all your need smooth and trouble free.",
     imageUrl: "/images/products/gear.jpg",
     subProducts: [
       {
         name: "Worm and Worm Wheel",
-        description: "Mauli Industries is the leading worm gear manufacturer, supplier and exporter in India. We never compromise in the quality aspect of worm gears. Worm gears are highly utilized in the manufacturing and packaging industries, conveying applications and small machineries.",
+        description:
+          "Mauli Industries is the leading worm gear manufacturer, supplier and exporter in India. We are firm in offering the best quality worm gears all throughout India as well as many other countries spread across the world. We never compromise in the quality aspect of worm gears. We provide fully furnished products that are fabricated from top graded raw materials. Worm gears are highly utilized in the manufacturing and packaging industries. They are used in packing equipment, conveying applications and small machineries. We never compromise in the product quality. We've made stringent supervisions during the construction of superior grade worm gear. Worm gears are highly recommended due to their high tensile strength and great workability features.",
         specs: [
-          { Particular: "Worms-Milled", Specifications: "Module: 1-16mm, Diameter: 5-1600mm" },
-          { Particular: "Worms-Hardened & Ground", Specifications: "Module: 1-16mm, Diameter: 5-1600mm" },
-          { Particular: "Worm Wheels", Specifications: "Module: 1-16mm, Diameter: 5-1600mm" },
+          { Particular: "Worms-Milled", Specifications: "Module: Min 1mm, Max 16mm | Diameter: Min 5mm, Max 1600mm" },
+          { Particular: "Worms-Hardened & Ground", Specifications: "Module: Min 1mm, Max 16mm | Diameter: Min 5mm, Max 1600mm" },
+          { Particular: "Worm Wheels", Specifications: "Module: Min 1mm, Max 16mm | Diameter: Min 5mm, Max 1600mm" },
         ],
       },
       {
         name: "Spiral Bevel Gear",
-        description: "We are the leading Bevel gear manufacturer. Ground Spiral Bevel Gear, Hard Cut Spiral Bevel Gear, Lapped Spiral Bevel Gear available.",
+        description:
+          "We are the leading Bevel gear manufacturer, opted all kind of bevel gears such as Ground Spiral Bevel Gear, Hard Cut Spiral Bevel Gear, Lapped Spiral Bevel Gear, Ground Straight Bevel Gear, Straight Bevel Gear, Hypoid Gear, Angular Bevel Gear, zero Bevel gear.",
         specs: [
-          { Particular: "Normal Module", Specifications: "1-6mm" },
-          { Particular: "Outside Diameter", Specifications: "20-280mm" },
+          { Particular: "Normal Module", Specifications: "Min 1mm, Max 6mm" },
+          { Particular: "Outside Diameter", Specifications: "Min 20mm, Max 280mm" },
         ],
       },
       {
         name: "Straight Bevel Gear",
-        description: "High-quality straight bevel gears with precision manufacturing for smooth power transmission.",
+        description:
+          "High-quality straight bevel gears with precision manufacturing for smooth power transmission in industrial applications.",
         specs: [
-          { Particular: "Normal Module", Specifications: "1-8mm" },
-          { Particular: "Outside Diameter", Specifications: "12-300mm" },
+          { Particular: "Normal Module", Specifications: "Min 1mm, Max 8mm" },
+          { Particular: "Outside Diameter", Specifications: "Min 12mm, Max 300mm" },
         ],
       },
       {
         name: "Helical Gears - Hob Finish",
-        description: "Our wide range and versatility to provide customized helical gear solutions. Hob finished for smooth operation.",
+        description:
+          "Our wide range and versatility to provide customized solution to your need. Hob finished helical gears for smooth and efficient operation.",
         specs: [
-          { Particular: "Normal Module", Specifications: "1-16mm" },
-          { Particular: "Outside Diameter", Specifications: "5-1600mm" },
+          { Particular: "Normal Module", Specifications: "Min 1mm, Max 16mm" },
+          { Particular: "Outside Diameter", Specifications: "Min 5mm, Max 1600mm" },
         ],
       },
       {
         name: "Helical Gears - Hardened & Precision Ground",
-        description: "Hardened and precision ground helical gears for demanding applications requiring high accuracy.",
+        description:
+          "Hardened and precision ground helical gears for demanding applications requiring high accuracy and durability.",
         specs: [
-          { Particular: "Normal Module", Specifications: "1-16mm" },
-          { Particular: "Outside Diameter", Specifications: "5-1600mm" },
+          { Particular: "Normal Module", Specifications: "Min 1mm, Max 16mm" },
+          { Particular: "Outside Diameter", Specifications: "Min 5mm, Max 1600mm" },
         ],
       },
       {
         name: "Spur Gear - Hob Finish",
-        description: "Our wide range and versatility to provide customized spur gear solutions. Available in various modules.",
+        description:
+          "Our wide range and versatility to provide customized solutions to your need. Available in various modules and diameters.",
         specs: [
-          { Particular: "Normal Module", Specifications: "0.5-16mm" },
-          { Particular: "Outside Diameter", Specifications: "5-1600mm" },
+          { Particular: "Normal Module", Specifications: "Min 0.5mm, Max 16mm" },
+          { Particular: "Outside Diameter", Specifications: "Min 5mm, Max 1600mm" },
         ],
       },
       {
         name: "Spur Gears - Hardened & Precision Ground",
-        description: "Hardened and precision ground spur gears for high-performance applications.",
+        description:
+          "Hardened and precision ground spur gears for high-performance applications requiring superior surface finish.",
         specs: [
-          { Particular: "Normal Module", Specifications: "0.5-16mm" },
-          { Particular: "Outside Diameter", Specifications: "5-1600mm" },
+          { Particular: "Normal Module", Specifications: "Min 0.5mm, Max 16mm" },
+          { Particular: "Outside Diameter", Specifications: "Min 5mm, Max 1600mm" },
         ],
       },
       {
         name: "Spur Gears - Shaped (External)",
-        description: "Externally shaped spur gears manufactured with precision for reliable power transmission.",
+        description:
+          "Externally shaped spur gears manufactured with precision for reliable power transmission in various industrial setups.",
         specs: [
-          { Particular: "Normal Module", Specifications: "0.5-16mm" },
-          { Particular: "Outside Diameter", Specifications: "5-1600mm" },
+          { Particular: "Normal Module", Specifications: "Min 0.5mm, Max 16mm" },
+          { Particular: "Outside Diameter", Specifications: "Min 5mm, Max 1600mm" },
         ],
       },
       {
         name: "Spur Gears - Shaped (Internal)",
-        description: "Internally shaped spur gears for specialized applications requiring internal gear configurations.",
+        description:
+          "Internally shaped spur gears for specialized applications requiring internal gear configurations.",
         specs: [
-          { Particular: "Normal Module", Specifications: "0.5-16mm" },
-          { Particular: "Outside Diameter", Specifications: "5-1600mm" },
+          { Particular: "Normal Module", Specifications: "Min 0.5mm, Max 16mm" },
+          { Particular: "Outside Diameter", Specifications: "Min 5mm, Max 1600mm" },
         ],
       },
     ],
@@ -368,18 +476,19 @@ export const productCategories: ProductCategory[] = [
     id: "chain-sprocket",
     name: "Chain Sprocket",
     description:
-      "One of the bestseller products for different industrial applications. Manufactured with top-notch design, material and manufacturing expertise. Range includes single, double, triple strand, Quadruplex, taper lock, split, countershaft, conveyor, roll mill and ring sprockets.",
+      "To give motion to the power that your company wants to give to integrate the success, we are here to present one of the bestseller products in the market for different industrial applications. Our products are manufactured with top notch design, material and manufacturing experts. We provide customised solution with the range includes single strand sprocket, double-strand sprocket, triple strand sprocket, Quadruplex, taper lock sprocket, split sprocket, countershaft sprocket, conveyor sprocket, roll mill sprockets, ring sprocket and many more.",
     imageUrl: "/images/products/chain-sprocket.jpg",
     specs: [
-      { Particular: "Normal Pitch", Specifications: "5mm to 76mm" },
-      { Particular: "Outside Diameter", Specifications: "10mm to 1200mm" },
+      { Particular: "Type", Specifications: "Chain Sprockets" },
+      { Particular: "Normal Pitch", Specifications: "Min 5mm, Max 76mm" },
+      { Particular: "Outside Diameter", Specifications: "Min 10mm, Max 1200mm" },
     ],
   },
   {
     id: "timing-pulley",
     name: "Timing Pulley",
     description:
-      "Precision manufacturing ensures smooth and silent functioning of the drive. Multiple material options including Steel, Aluminium and its alloys, CI, SS. Belt pulleys available from 10mm to 600mm outside diameter.",
+      "Our precision manufacturing experts provides ultimate solution to ensure smooth and silent functioning of the drive. We offer multiple options of materials including ferrous and non-ferrous materials such as Steel, Aluminium and its alloys, CI, SS etc. We ensure the quality and cost effectiveness factor to serve you better.",
     imageUrl: "/images/products/timing-pulley.jpg",
     specs: [
       { Particular: "Type", Specifications: "Timing Belt Pulleys" },
@@ -391,24 +500,25 @@ export const productCategories: ProductCategory[] = [
     id: "gear-coupling",
     name: "Gear Coupling",
     description:
-      "Served multiple sectors in Pan India including Steel & Rolling Mill, Automotive, Tyre and Pharmaceutical industries. Full crowning gear couplings and sleeves available. ISO 9001-2015 quality standards maintained.",
+      "We have gear coupling served multiple sectors in PAN India in different sectors like Steel and rolling mill, Automotive, Tyre, Pharmaceutical Industries etc. Our gear coupling can be used to couple different power transmission parts enhances efficiency and accommodate the misalignment too. We have maintained the quality standards as per ISO 9001-2015.",
     imageUrl: "/images/products/gear-coupling.jpg",
     specs: [
-      { Particular: "Gear Coupling (Full Crowning)", Specifications: "Module: 1mm, Diameter: 10-500mm" },
-      { Particular: "Gear Coupling Sleeves (I.D)", Specifications: "Module: 1mm, Diameter: 10-650mm" },
+      { Particular: "Gear Coupling (Full Crowning)", Specifications: "Module: 1mm, Diameter: Min 10mm, Max 500mm" },
+      { Particular: "Gear Coupling Sleeves (I.D)", Specifications: "Module: 1mm, Diameter: Min 10mm, Max 650mm" },
     ],
   },
   {
     id: "helical-gearbox-crane",
     name: "Helical Gearboxes for Cranes",
     description:
-      "Leading supplier of helical gearboxes for cranes with 3 and 4 stages. Made from STD Alloy Steel and Case Hardened Steel, sizes up to 1200mm Central Distance, ratio up to 630:1.",
+      "Mauli is leading supplier and service provider of helical gearbox for crane. Our highly skilled human force and latest technology to map and provide you the best gearbox for all your need. Our dedicated research and development team kaizen's the quality and smoothen the motive force of your system. We have earnt faith from our esteemed client and created monopoly in the region for providing the best gearboxes in segment.",
     imageUrl: "/images/products/helical-gearbox-crane.jpg",
     specs: [
       { Particular: "Brand", Specifications: "Mauli" },
       { Particular: "Stages", Specifications: "3 and 4" },
       { Particular: "MOC", Specifications: "STD Alloy Steel, Case Hardened Steel" },
-      { Particular: "Sizes", Specifications: "Upto 1200mm Central Distance" },
+      { Particular: "Shape", Specifications: "Customized" },
+      { Particular: "Sizes", Specifications: "Upto 1200 mm Central Distance" },
       { Particular: "Salient Feature", Specifications: "Precise Machined, Hardened, Certified" },
       { Particular: "Ratio", Specifications: "630:1" },
       { Particular: "Supply", Specifications: "PAN India" },
@@ -418,13 +528,14 @@ export const productCategories: ProductCategory[] = [
     id: "parallel-shaft-gearbox",
     name: "Parallel Shaft Helical Gearboxes",
     description:
-      "Top player among parallel shaft helical gearbox manufacturers. Available in single, two, three & four stages up to 630 CD at final stages.",
+      "Mauli Industry is a top player among the parallel shaft helical gearboxes manufactures. Parallel Shaft Helical Gearboxes in single, two, three & four stages upto 630 CD at final stages.",
     imageUrl: "/images/products/parallel-shaft-gearbox.jpg",
     specs: [
       { Particular: "Brand", Specifications: "Mauli" },
       { Particular: "Stages", Specifications: "Single-Fourth Stage helical" },
       { Particular: "MOC", Specifications: "STD Alloy Steel, Case Hardened Steel" },
-      { Particular: "Sizes", Specifications: "Upto 630mm CD" },
+      { Particular: "Shape", Specifications: "Customized" },
+      { Particular: "Sizes", Specifications: "Upto 630 mm CD" },
       { Particular: "Salient Feature", Specifications: "Precise Machined, Hardened, Certified" },
       { Particular: "Ratio", Specifications: "Upto 650:1" },
       { Particular: "Supply", Specifications: "PAN India" },
@@ -434,13 +545,14 @@ export const productCategories: ProductCategory[] = [
     id: "extruder-gearbox",
     name: "Extruder Duty Helical Gearboxes",
     description:
-      "Heavy duty, durable and low-noise extruder gearboxes that accelerate efficiency and performance. Serving Iron & Steel, Food & Beverage, Pharmaceutical, Tyre industries.",
+      "Mauli Industries is well known for developing heavy duty, durable and less noise extruder gearbox accelerates efficiency and performance of the system. Our high capacity infra and expertise personnel made us market distinguisher in the competent marketplace. We can match your expectation with the best and customised gearboxes. We provide gearboxes in all kinds of process and product industries such as Iron and steel industries, food and beverage, pharmaceutical, tyre etc.",
     imageUrl: "/images/products/extruder-gearbox.jpg",
     specs: [
       { Particular: "Brand", Specifications: "Mauli" },
       { Particular: "Stages", Specifications: "1 and 2 Stage helical" },
       { Particular: "MOC", Specifications: "STD Alloy Steel, Case Hardened Steel" },
-      { Particular: "Sizes", Specifications: "Upto 630mm CD" },
+      { Particular: "Shape", Specifications: "Customized" },
+      { Particular: "Sizes", Specifications: "Upto 630 mm CD" },
       { Particular: "Salient Feature", Specifications: "Precise Machined, Hardened, Certified" },
       { Particular: "Ratio", Specifications: "Upto 6:1 to 22:1" },
       { Particular: "Supply", Specifications: "PAN India" },
@@ -450,7 +562,7 @@ export const productCategories: ProductCategory[] = [
     id: "custom-gearbox",
     name: "Custom-Made Gear Boxes",
     description:
-      "Mauli Industries drives the best solutions in customised helical gearbox manufacturing in India. Wide range of customers in rolling mill, steel & power plants, pharmaceutical, automotive industries.",
+      "Mauli Industries drives the best solutions in customised helical gearbox manufacturing in India. We have a wide range of customers in different segments such as rolling mill, steel and power plants, pharmaceutical, automotive industries etc. We are the first choice in our region for providing the solutions for gearbox supply and service. Our highly skilled human force and latest technology to map and provide you the best gearbox for all your need. Our dedicated research and development team kaizen's the quality and smoothen the motive force of your system.",
     imageUrl: "/images/products/custom-gearbox.jpg",
   },
 ];
