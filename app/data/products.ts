@@ -198,14 +198,14 @@ export const productCategories: ProductCategory[] = [
     name: "Pinch Roll and Tail Breaker",
     description:
       "Mauli is pioneer in the region of manufacturing the spare parts and machineries in rolling mills since last 20 years with happy and satisfactory customers. We have the innovative approach in product development for best performance and durability. We are expert in producing the high-speed pinch rolls and tail breaker to produce consistent tension of the bar.",
-    imageUrl: "/images/products/pinch-roll.jpg",
+    imageUrl: "/images/products/Pinch-Roll-&-taol-breaker-unit.jpg",
   },
   {
     id: "mill-stands",
     name: "Mill Stands",
     description:
       "We are leading manufacturer of complete set of mill stands for the rolling industry of ferrous and non-ferrous metals.",
-    imageUrl: "/images/products/mill-stands.jpg",
+    imageUrl: "/images/products/Mill-stand.jpg",
     specs: [
       { Particular: "Brand", Specifications: "Mauli" },
       { Particular: "Category", Specifications: "Mill Stand" },
@@ -225,7 +225,7 @@ export const productCategories: ProductCategory[] = [
     name: "Gear Couplings",
     description:
       "Proper material selection, adequate design and precision manufacturing is the basic key to develop an efficient gear coupling. They are generally used for transmitting the power from one shaft to another. Our quality control measure makes us to stand distinct in the line. We are the leading supplier of gear coupling for different sizes and torque requirement.",
-    imageUrl: "/images/products/gear-couplings.jpg",
+    imageUrl: "/images/products/GEAR-Coupings.jpg",
     specs: [
       { Particular: "Brand", Specifications: "Mauli" },
       { Particular: "Category", Specifications: "Gear Coupling" },
