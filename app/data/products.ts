@@ -648,5 +648,73 @@ export const productCategories: ProductCategory[] = [
     description:
       "",
     imageUrl: "/images/products/close-type-scoop.png",
+  },
+   {
+    id: "SSMOPPIGTROLLEY",
+    name: "SS Moppi G Trolley",
+    description:
+      "",
+    imageUrl: "/images/products/moppi-g-trolley.png",
+  },
+  {
+    id: "ss-dustbins",
+    name: "SSDUSTBINS",
+    description: "",
+    imageUrl: "/images/products/ss-dustbins.jpg",
+  },
+  {
+    id: "ss-stools",
+    name: "SSSTOOLS",
+    description: "",
+    imageUrl: "/images/products/ss-stools.jpg",
+  },
+  {
+    id: "ss-jugs",
+    name: "SSJUGS",
+    description: "",
+    imageUrl: "/images/products/ss-jugs.jpg",
+  },
+ 
+  {
+    id: "ss-bucket",
+    name: "SSBUCKET",
+    description: "",
+    imageUrl: "/images/products/ss-bucket.jpg",
+  },
+  {
+    id: "ss-chairs",
+    name: "SSCHAIRS",
+    description: "",
+    imageUrl: "/images/products/ss-chairs.jpg",
+  },
+  {
+    id: "ss-powder-samplers",
+    name: "SSPOWDER SAMPLERS",
+    description: "",
+    imageUrl: "/images/products/ss-powder-samplers.jpg",
+  },
+  {
+    id: "ss-teflon-hammer",
+    name: "SSTEFLON HAMMER",
+    description: "",
+    imageUrl: "/images/products/ss-teflon-hammer.jpg",
+  },
+  {
+    id: "ss-sopstand",
+    name: "SSSOPSTAND",
+    description: "",
+    imageUrl: "/images/products/ss-sopstand.jpg",
+  },
+  {
+    id: "ss-filter-housing",
+    name: "SSFILTERHOUSING",
+    description: "",
+    imageUrl: "/images/products/ss-filter-housing.jpg",
+  },
+  {
+    id: "electrical-vent-housing",
+    name: "ELECTRIALVENTHOUSING",
+    description: "",
+    imageUrl: "/images/products/electrical-vent-housing.jpg",
   }
 ];
