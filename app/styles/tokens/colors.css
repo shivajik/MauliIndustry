@@ -427,9 +427,9 @@
   --orange-6: light-dark(#ffc182, #66350c);
   --orange-7: light-dark(#f5ae73, #7e451d);
   --orange-8: light-dark(#ec9455, #a35829);
-  --orange-9: light-dark(#f76a15, #f76a15);
-  --orange-10: light-dark(#ef5f00, #ff791b);
-  --orange-11: light-dark(#d14e00, #ff9b52);
+  --orange-9: light-dark(#E37D1B, #E37D1B);
+  --orange-10: light-dark(#d66318, #f07b2e);
+  --orange-11: light-dark(#c05814, #ff9b52);
   --orange-12: light-dark(#582d1d, #ffe0c2);
   --orange-contrast: #fff;
 }
