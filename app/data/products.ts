@@ -629,4 +629,24 @@ export const productCategories: ProductCategory[] = [
       "Mauli Industries drives the best solutions in customised helical gearbox manufacturing in India. We have a wide range of customers in different segments such as rolling mill, steel and power plants, pharmaceutical, automotive industries etc. We are the first choice in our region for providing the solutions for gearbox supply and service. Our highly skilled human force and latest technology to map and provide you the best gearbox for all your need. Our dedicated research and development team kaizen's the quality and smoothen the motive force of your system.",
     imageUrl: "/images/products/custom-gearbox.jpg",
   },
+  {
+    id: "BAGFILTERHOUSING",
+    name: "Bag Filter Housing",
+    description:
+      "",
+    imageUrl: "/images/products/bag-filter-housing.png",
+  },
+    {
+    id: "SSINDUSTRIAL STEP LEADER",
+    name: "SS Industrial Step Leader",
+    description:
+      "",
+    imageUrl: "/images/products/step-leader.png",
+  }, {
+    id: "SSCLOSETYPESCOOP",
+    name: "SS Close Type Scoop",
+    description:
+      "",
+    imageUrl: "/images/products/close-type-scoop.png",
+  }
 ];
