@@ -135,6 +135,35 @@ const DEFAULT_THEMES: Theme[] = [
       code: 'monospace',
     },
   },
+  {
+    id: 'mauli-orange',
+    name: 'Mauli Orange',
+    description: 'Corporate orange theme for Mauli Industries',
+    author: 'Mauli Industries',
+    version: '1.0.0',
+    thumbnail: 'https://placehold.co/400x300/E37D1B/white?text=Mauli+Orange',
+    colors: {
+      neutral: 'slate',
+      accent: 'orange',
+      success: 'green',
+      error: 'red',
+    },
+    fonts: {
+      display: 'Montserrat',
+      heading: 'Montserrat',
+      subheading: 'Montserrat',
+      body: 'Open Sans',
+      caption: 'Open Sans',
+      code: 'monospace',
+    },
+    customCSS: `
+      :root {
+        --color-accent-9: #E37D1B;
+        --color-accent-10: #D36D0B;
+        --brand-primary: #E37D1B;
+      }
+    `,
+  },
 ];
 
 export function useThemeManager() {

@@ -7,6 +7,7 @@ import { Button } from "~/components/ui/button/button";
 import { Input } from "~/components/ui/input/input";
 import { Textarea } from "~/components/ui/textarea/textarea";
 import { Label } from "~/components/ui/label/label";
+import { sendContactEmail } from "~/lib/services/email";
 import styles from "./contact.module.css";
 
 export async function loader() {
@@ -15,6 +16,19 @@ export async function loader() {
     dbService.getPages(),
   ]);
   return { company, pages };
+}
+
+export async function action({ request }: Route.ActionArgs) {
+  const formData = await request.formData();
+  const name = formData.get("name") as string;
+  const email = formData.get("email") as string;
+  const phone = formData.get("phone") as string;
+  const subject = formData.get("subject") as string;
+  const message = formData.get("message") as string;
+
+  const success = await sendContactEmail({ name, email, phone, subject, message });
+
+  return { success };
 }
 
 export function meta({}: Route.MetaArgs) {
@@ -131,7 +145,12 @@ export default function Contact({ loaderData }: Route.ComponentProps) {
           <h2 className={styles.formTitle}>Send Us a Message</h2>
           <p className={styles.formSubtitle}>Fill out the form below and we'll get back to you soon</p>
           
-          <form className={styles.form}>
+          <form className={styles.form} method="post">
+            {loaderData?.success && (
+              <div style={{ padding: '1rem', backgroundColor: '#dcfce7', color: '#166534', borderRadius: '0.5rem', marginBottom: '1rem' }}>
+                Thank you! Your message has been sent successfully.
+              </div>
+            )}
             <div className={styles.formGrid}>
               <div className={styles.formGroup}>
                 <Label htmlFor="name">Name *</Label>

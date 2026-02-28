@@ -14,8 +14,10 @@ let pool: pg.Pool | null = null;
 let dbInitialized = false;
 
 export function getPool(): pg.Pool | null {
-  if (!connectionString) {
-    console.warn("SUPABASE_DATABASE_URL not configured. Using fallback data.");
+  if (!connectionString || connectionString.includes('YOUR_DATABASE_URL')) {
+    if (process.env.NODE_ENV === 'production') {
+      console.warn("SUPABASE_DATABASE_URL not configured in production. Falling back to static data.");
+    }
     return null;
   }
 

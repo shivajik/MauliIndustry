@@ -10,6 +10,8 @@ export class DatabaseService {
 
   // Products
   async getProducts(): Promise<ProductCategory[]> {
+    const { productCategories: staticProducts } = await import("~/data/products");
+
     if (this.supabase) {
       try {
         const { data, error } = await this.supabase
@@ -18,34 +20,34 @@ export class DatabaseService {
           .order("created_at", { ascending: true });
 
         if (error) throw error;
-        return (data || []).map((p) => ({
-          id: p.id,
-          name: p.name,
-          description: p.description || "",
-          image_url: p.image_url || "",
-          created_at: p.created_at,
-        }));
+        if (data && data.length > 0) {
+          return (data || []).map((p) => ({
+            id: p.id,
+            name: p.name,
+            description: p.description || "",
+            image_url: p.image_url || "",
+            created_at: p.created_at,
+          }));
+        }
       } catch (error) {
         console.error("Error fetching products from Supabase:", error);
-        // Fallback to pool
       }
     }
 
-    // Fallback to PostgreSQL pool
     if (this.pool) {
       try {
         const result = await this.pool.query<ProductCategory>(
           "SELECT * FROM products ORDER BY created_at ASC"
         );
-        return result.rows;
+        if (result.rows.length > 0) {
+          return result.rows;
+        }
       } catch (error) {
         console.error("Error fetching products from pool:", error);
       }
     }
 
-    // Final fallback to static data
-    const { productCategories } = await import("~/data/products");
-    return productCategories.map((p) => ({
+    return staticProducts.map((p) => ({
       id: p.id,
       name: p.name,
       description: p.description,
@@ -220,6 +222,8 @@ export class DatabaseService {
 
   // Clients
   async getClients(): Promise<Client[]> {
+    const { clients: staticClients } = await import("~/data/clients");
+
     if (this.supabase) {
       try {
         const { data, error } = await this.supabase
@@ -228,13 +232,15 @@ export class DatabaseService {
           .order("created_at", { ascending: true });
 
         if (error) throw error;
-        return (data || []).map((c) => ({
-          id: c.id,
-          name: c.name,
-          logo_url: c.logo_url || "",
-          logoUrl: c.logo_url || "",
-          created_at: c.created_at,
-        }));
+        if (data && data.length > 0) {
+          return (data || []).map((c) => ({
+            id: c.id,
+            name: c.name,
+            logo_url: c.logo_url || "",
+            logoUrl: c.logo_url || "",
+            created_at: c.created_at,
+          }));
+        }
       } catch (error) {
         console.error("Error fetching clients from Supabase:", error);
       }
@@ -243,17 +249,18 @@ export class DatabaseService {
     if (this.pool) {
       try {
         const result = await this.pool.query<Client>("SELECT * FROM clients ORDER BY created_at ASC");
-        return result.rows.map(c => ({
-          ...c,
-          logoUrl: c.logo_url || (c as any).logoUrl
-        }));
+        if (result.rows.length > 0) {
+          return result.rows.map(c => ({
+            ...c,
+            logoUrl: c.logo_url || (c as any).logoUrl
+          }));
+        }
       } catch (error) {
         console.error("Error fetching clients from pool:", error);
       }
     }
 
-    const { clients } = await import("~/data/clients");
-    return clients.map((c) => ({
+    return staticClients.map((c) => ({
       id: c.id,
       name: c.name,
       logo_url: c.logoUrl,
