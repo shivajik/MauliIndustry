@@ -676,6 +676,24 @@ export const productCategories: ProductCategory[] = [
   },
  
   {
+    id: "ss-containers",
+    name: "SSCONTAINERS",
+    description: "",
+    imageUrl: "/images/products/ss-containers.jpg",
+  },
+  {
+    id: "ss-beaker-jug",
+    name: "SS BEAKER JUG/JAR/MUG",
+    description: "",
+    imageUrl: "/images/products/ss-beaker-jug.jpg",
+  },
+  {
+    id: "ss-open-type-scoop",
+    name: "SSOPENTYPESCOOP",
+    description: "",
+    imageUrl: "/images/products/ss-open-type-scoop.jpg",
+  },
+  {
     id: "ss-bucket",
     name: "SSBUCKET",
     description: "",
