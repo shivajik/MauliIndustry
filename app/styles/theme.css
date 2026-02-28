@@ -69,20 +69,20 @@ html {
   --color-success-12: var(--green-12);
   --color-success-contrast: var(--green-contrast);
 
-  /* Brand colors - Deep industrial indigo */
-  --color-brand-1: var(--indigo-1);
-  --color-brand-2: var(--indigo-2);
-  --color-brand-3: var(--indigo-3);
-  --color-brand-4: var(--indigo-4);
-  --color-brand-5: var(--indigo-5);
-  --color-brand-6: var(--indigo-6);
-  --color-brand-7: var(--indigo-7);
-  --color-brand-8: var(--indigo-8);
-  --color-brand-9: var(--indigo-9);
-  --color-brand-10: var(--indigo-10);
-  --color-brand-11: var(--indigo-11);
-  --color-brand-12: var(--indigo-12);
-  --color-brand-contrast: var(--indigo-contrast);
+  /* Brand colors - Deep industrial orange */
+  --color-brand-1: var(--orange-1);
+  --color-brand-2: var(--orange-2);
+  --color-brand-3: var(--orange-3);
+  --color-brand-4: var(--orange-4);
+  --color-brand-5: var(--orange-5);
+  --color-brand-6: var(--orange-6);
+  --color-brand-7: var(--orange-7);
+  --color-brand-8: var(--orange-8);
+  --color-brand-9: var(--orange-9);
+  --color-brand-10: var(--orange-10);
+  --color-brand-11: var(--orange-11);
+  --color-brand-12: var(--orange-12);
+  --color-brand-contrast: var(--orange-contrast);
 
   /* Highlight color - Warm amber accent */
   --color-highlight-1: var(--amber-1);
