@@ -694,6 +694,42 @@ export const productCategories: ProductCategory[] = [
     imageUrl: "/images/products/ss-open-type-scoop.jpg",
   },
   {
+    id: "ss-container-lid-handle",
+    name: "SS CONTAINER WITH LID AND HANDLE",
+    description: "",
+    imageUrl: "/images/products/ss-container-lid-handle.jpg",
+  },
+  {
+    id: "ss-tool-box",
+    name: "SSTOOLBOX",
+    description: "",
+    imageUrl: "/images/products/ss-toolbox.jpg",
+  },
+  {
+    id: "ss-pressure-vessels",
+    name: "SSPRESSURE VESSELS",
+    description: "",
+    imageUrl: "/images/products/ss-pressure-vessels.jpg",
+  },
+  {
+    id: "ss-floor-drain-trap",
+    name: "SS SIDE OUTLET GMP FLOOR DRAIN TRAP",
+    description: "",
+    imageUrl: "/images/products/ss-floor-drain-trap.jpg",
+  },
+  {
+    id: "ss-membrane-holder",
+    name: "SSMEMBRANE HOLDER",
+    description: "",
+    imageUrl: "/images/products/ss-membrane-holder.jpg",
+  },
+  {
+    id: "ss-pharma-floor-drain",
+    name: "SSPHARMA FLOOR DRAIN TRAP",
+    description: "",
+    imageUrl: "/images/products/ss-pharma-floor-drain.jpg",
+  },
+  {
     id: "ss-bucket",
     name: "SSBUCKET",
     description: "",
