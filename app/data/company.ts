@@ -1,6 +1,6 @@
 export const companyInfo = {
   name: "Mauli Industries",
-  tagline: "Precision Engineering for Steel & Rolling Mill Industries",
+  tagline: "Precision Engineering for Steel, Pharmaceutical, Automotive, and Food Processing.",
   description:
     "ISO 9001:2015 certified precision tool room specializing in machining solutions for the rolling mill and steel industry.",
   address: {
